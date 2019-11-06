@@ -48,11 +48,7 @@ module.exports = appInfo => {
       ""
     ]
   };
-  //跨域
-  config.cors = {
-    origin: '*',
-    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
-  };
+
   //修改端口号
   config.cluster = {
     listen: {
