@@ -61,14 +61,14 @@ export default {
       } else if (this.files.length > 0) {
         this.uploadfile();
       } else {
-        let dongtai_id = Math.random() * 100000;
+        let dongtai_id = Math.random() * 100000;//每条动态生成一个唯一的id
         this.uploadtext(dongtai_id);
       }
     },
     //上传图片
     uploadfile() {
       let header = {}; //设置header
-      let dongtai_id = Math.random() * 100000;
+      let dongtai_id = Math.random() * 100000;//每条动态生成一个唯一的id
       try {
         let value = wx.getStorageSync("usertoken");
         if (value) {
