@@ -5,3 +5,4 @@
 eggjs-----------后端代码，使用使用nodejs,eggjs,mysql,redis等技术
 wechat----------前端代码，使用mpvue小程序框架
 mysql-----------项目数据库的设计
+![项目截图](http://101.37.25.179/demo_imgs/1.PNG)
