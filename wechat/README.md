@@ -1,32 +1,32 @@
-- [├─config](#├─config)      #啊
+- [├─config](#├─config)      
 - [├─src](#├─src)
-- [│  ├─components](#│--├─components)
-- [│  │  ├─backtotop](#│--│--├─backtotop)
-- [│  │  ├─bottommodal](#│--│--├─bottommodal)
-- [│  │  ├─dongtailist](#│--│--├─dongtailist)
-- [│  │  ├─fenleidetails](#│--│--├─fenleidetails)
-- [│  │  ├─iconliebiao](#│--│--├─iconliebiao)
-- [│  │  ├─iconliebiao1](#│--│--├─iconliebiao1)
-- [│  │  ├─inputs](#│--│--├─inputs)
-- [│  │  ├─liebiao](#│--│--├─liebiao)
-- [│  │  └─msg](#│--│--└─msg)
-- [│  ├─pages](#│--├─pages)
-- [│  │  ├─about](#│--│--├─about)
-- [│  │  ├─address](#│--│--├─address)
-- [│  │  ├─details](#│--│--├─details)
-- [│  │  ├─faxian](#│--│--├─faxian)
-- [│  │  ├─fenlei](#│--│--├─fenlei)
-- [│  │  ├─index](#│--│--├─index)
-- [│  │  ├─lists](#│--│--├─lists)
-- [│  │  ├─login](#│--│--├─login)
-- [│  │  ├─me](#│--│--├─me)
-- [│  │  ├─order](#│--│--├─order)
-- [│  │  ├─password](#│--│--├─password)
-- [│  │  ├─shoucanglist](#│--│--├─shoucanglist)
-- [│  │  ├─tologin](#│--│--├─tologin)
-- [│  │  └─upload](#│--│--└─upload)
-- [│  ├─store](#│--├─store)
-- [│  └─utils](#│--└─utils)
+- [│  ├─components](#│--├─components)#-----------------------------组件目录
+- [│  │  ├─backtotop](#│--│--├─backtotop)#-------------------------返回顶部
+- [│  │  ├─bottommodal](#│--│--├─bottommodal)#---------------------底部弹窗
+- [│  │  ├─dongtailist](#│--│--├─dongtailist)#---------------------动态列表
+- [│  │  ├─fenleidetails](#│--│--├─fenleidetails)#-------------分类列表
+- [│  │  ├─iconliebiao](#│--│--├─iconliebiao)#--------------首页的图标列表
+- [│  │  ├─iconliebiao1](#│--│--├─iconliebiao1)#-------------我的页面图标列表
+- [│  │  ├─inputs](#│--│--├─inputs)#-------------输入框
+- [│  │  ├─liebiao](#│--│--├─liebiao)#-------------列表
+- [│  │  └─msg](#│--│--└─msg)#-------------首页商品列表
+- [│  ├─pages](#│--├─pages)#-------------页面目录
+- [│  │  ├─about](#│--│--├─about)#-------------关于我们
+- [│  │  ├─address](#│--│--├─address)#-------------地址
+- [│  │  ├─details](#│--│--├─details)#-------------商品详情
+- [│  │  ├─faxian](#│--│--├─faxian)#-------------发现页面
+- [│  │  ├─fenlei](#│--│--├─fenlei)#-------------分类页面
+- [│  │  ├─index](#│--│--├─index)#-------------首页
+- [│  │  ├─lists](#│--│--├─lists)#-------------购物车
+- [│  │  ├─login](#│--│--├─login)#-------------登录
+- [│  │  ├─me](#│--│--├─me)#-------------我的
+- [│  │  ├─order](#│--│--├─order)#-------------分类
+- [│  │  ├─password](#│--│--├─password)#-------------修改密码
+- [│  │  ├─shoucanglist](#│--│--├─shoucanglist)#-------------收藏页面
+- [│  │  ├─tologin](#│--│--├─tologin)#-------------授权登录
+- [│  │  └─upload](#│--│--└─upload)#-------------发动态
+- [│  ├─store](#│--├─store)#-------------vuex
+- [│  └─utils](#│--└─utils)#-------------封装的公共方法
 - [└─static](#└─static)
 - [├─images](#├─images)
 - [├─listicon](#├─listicon)
