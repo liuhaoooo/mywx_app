@@ -33,5 +33,5 @@ npm build:my
 # 生成 bundle 分析报告
 npm run build --report
 ```
-![RUNOOB 图标]()
+![项目截图](http://101.37.25.179/demo_imgs/1.PNG)(http://101.37.25.179/demo_imgs/2.PNG)(http://101.37.25.179/demo_imgs/3.PNG)
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
