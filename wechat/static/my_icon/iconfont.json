@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "29928",
+      "name": "edit",
+      "font_class": "edit",
+      "unicode": "e649",
+      "unicode_decimal": 58953
+    },
+    {
+      "icon_id": "29931",
+      "name": "favor",
+      "font_class": "favor",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "32471",
+      "name": "cart",
+      "font_class": "cart",
+      "unicode": "e6af",
+      "unicode_decimal": 59055
+    },
+    {
+      "icon_id": "88609",
+      "name": "copy",
+      "font_class": "copy",
+      "unicode": "e706",
+      "unicode_decimal": 59142
+    },
+    {
       "icon_id": "868254",
       "name": "icon-评论",
       "font_class": "iconpinglun",

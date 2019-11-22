@@ -17,7 +17,7 @@
       <div class="mid">
         <!-- icon列表 -->
         <div class="i">
-          <iconliebiao :datas="datas"></iconliebiao>
+          <iconliebiao1 :datas="datas"></iconliebiao1>
         </div>
         <div class="liebiao">
           <liebiao title="手机号" :text="phone" icon="icon-shouji"></liebiao>
@@ -33,16 +33,16 @@
 </template>
 
 <script>
-import iconliebiao from "../../components/iconliebiao/index";
+import iconliebiao1 from "../../components/iconliebiao1/index";
 import liebiao from "../../components/liebiao/index";
 export default {
   data() {
     return {
       datas: [
-        { title: "我的订单", imgurl: "5.png", tourl: "../about/main" },
-        { title: "订单", imgurl: "4.png", tourl: "../about/main" },
-        { title: "收藏", imgurl: "3.png", tourl: "../shoucanglist/main" },
-        { title: "购物车", imgurl: "2.png", tourl: "../lists/main" }
+        { title: "我的订单", icon:"icon-copy", tourl: "../about/main" },
+        { title: "我的收藏", icon:"icon-favor", tourl: "../shoucanglist/main" },
+        { title: "购物车", icon:"icon-cart", tourl: "../lists/main" },
+        { title: "我的评价", icon:"icon-edit", tourl: "../about/main" }
       ],
       phone:"",
       address: "",
@@ -50,7 +50,7 @@ export default {
     };
   },
   components: {
-    iconliebiao,
+    iconliebiao1,
     liebiao
   },
   computed: {

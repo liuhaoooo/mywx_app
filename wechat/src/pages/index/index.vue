@@ -58,14 +58,15 @@ export default {
       inputtext: "",
       offset: 0,
       liebiao: [
-        { title: "设置", imgurl: "1.png", tourl: "../fenlei/main" },
-        { title: "设置", imgurl: "2.png", tourl: "../fenlei/main" },
-        { title: "设置", imgurl: "3.png", tourl: "../fenlei/main" },
-        { title: "分类", imgurl: "4.png", tourl: "../fenlei/main" },
-        { title: "设置", imgurl: "1.png", tourl: "../fenlei/main" },
-        { title: "设置", imgurl: "2.png", tourl: "../fenlei/main" },
-        { title: "设置", imgurl: "3.png", tourl: "../fenlei/main" },
-        { title: "分类", imgurl: "4.png", tourl: "../fenlei/main" }
+        { title: "饼干", imgurl: "binggan.png", tourl: "../fenlei/main" },
+        { title: "水果", imgurl: "shuiguo.png", tourl: "../fenlei/main" },
+        { title: "补丁", imgurl: "buding.png", tourl: "../fenlei/main" },
+        { title: "面包", imgurl: "mianbao.png", tourl: "../fenlei/main" },
+        { title: "披萨", imgurl: "pisa.png", tourl: "../fenlei/main" },
+        { title: "热狗", imgurl: "regou.png", tourl: "../fenlei/main" },
+        { title: "薯片", imgurl: "shupian.png", tourl: "../fenlei/main" },
+        { title: "腰果", imgurl: "yaoguo.png", tourl: "../fenlei/main" },
+        
       ],
       imgUrls: [
         "https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640",
