@@ -2,10 +2,10 @@
   <div>
     <scroll-view scroll-y enable-back-to-top="true">
       <!-- 地址 -->
-      <!-- <div class="position">
+      <div class="position">
         <i class="iconfont icon-weizhi lefticon"></i>
         <div class="positiontext">{{address}}</div>
-      </div> -->
+      </div>
       <!-- 搜索 -->
       <mp-searchbar placeholder="请输入关键字搜索" @input="input"></mp-searchbar>
       <div class="mid">
@@ -60,7 +60,7 @@ export default {
       liebiao: [
         { title: "饼干", imgurl: "binggan.png", tourl: "../fenlei/main" },
         { title: "水果", imgurl: "shuiguo.png", tourl: "../fenlei/main" },
-        { title: "补丁", imgurl: "buding.png", tourl: "../fenlei/main" },
+        { title: "布丁", imgurl: "buding.png", tourl: "../fenlei/main" },
         { title: "面包", imgurl: "mianbao.png", tourl: "../fenlei/main" },
         { title: "披萨", imgurl: "pisa.png", tourl: "../fenlei/main" },
         { title: "热狗", imgurl: "regou.png", tourl: "../fenlei/main" },
@@ -69,10 +69,12 @@ export default {
         
       ],
       imgUrls: [
-        "https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640",
-        "https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640",
-        "https://images.unsplash.com/photo-1551446591-142875a901a1?w=640",
-        "https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640"
+        "http://101.37.25.179/swiper_imgs/1.jpg",
+        "http://101.37.25.179/swiper_imgs/2.jpg",
+        "http://101.37.25.179/swiper_imgs/3.jpg",
+        "http://101.37.25.179/swiper_imgs/4.jpg",
+        "http://101.37.25.179/swiper_imgs/5.jpg",
+        "http://101.37.25.179/swiper_imgs/6.jpg",
       ],
       datas: []
     };

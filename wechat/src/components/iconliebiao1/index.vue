@@ -40,7 +40,7 @@ export default {
 }
 .option>i{
     position: absolute;
-    left: 25%;
+    left: 27%;
     font-size: 60rpx;
     color: #666
 }
