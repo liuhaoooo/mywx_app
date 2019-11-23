@@ -7,6 +7,7 @@
       </div>
       <div class="button" @click="pay">结算</div>
     </div>
+    <div>
     <scroll-view scroll-y>
       <div class="order">
         <div class="list">
@@ -86,6 +87,7 @@
         </div>
       </div>
     </scroll-view>
+    </div>
   </div>
 </template>
 
@@ -153,6 +155,7 @@ export default {
 .list {
   color: #999;
   width: 96%;
+  height: 100vh;
   position: relative;
   right: 0;
   left: 0;
