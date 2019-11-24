@@ -149,6 +149,7 @@ export default {
 .order {
   width: 100%;
   height: 100vh;
+  margin-bottom: 150rpx;
   background: rgb(236, 236, 236);
   padding-top: 1rpx;
 }
