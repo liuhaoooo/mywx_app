@@ -12,7 +12,7 @@
       <div class="order">
         <div class="list">
           <!-- 收货地址 -->
-          <div class="address">
+          <div class="address" @click="toaddress">
             <div class="content">
               <i class="iconfont icon-dizhi4"></i>
               <div>&emsp;点击选择收货地址</div>
@@ -117,6 +117,10 @@ export default {
     }
   },
   methods: {
+    //跳转地址页面
+    toaddress(){
+      wx.navigateTo({url:"../address/main"})
+    },
     //处理vuex拿来的数据并计算价格
     changedata() {
       this.details = this.$store.getters.details;
