@@ -2,9 +2,10 @@
 <div>
   <scroll-view scroll-y>
     <div>
-      <div class="bottom" @click="addaddress">新增收货地址</div>
+      
     </div>
   </scroll-view>
+  <button class="button" type="primary" :plain="false" @click="addaddress">新增收货地址</button>
 </div>
 </template>
 
@@ -19,14 +20,12 @@ export default {
 </script>
 
 <style scoped>
-.bottom{
-  width: 100%;
-  height: 100rpx;
-  background: rgb(97, 162, 247);
-  text-align: center;
+.button{
+  left: 0;
+  right: 0;
+  margin: auto;
   position: fixed;
   top: 88vh;
-  line-height: 100rpx;
-  color: #666;
+  width: 90%;
 }
 </style>
