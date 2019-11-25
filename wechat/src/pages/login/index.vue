@@ -125,8 +125,9 @@ export default {
               duration: 2000
             });
             this.islogin = false; //注册成功跳转登录界面
-            this.password = "";
-            this.phone = "";
+            this.login();//注册成功自动登录
+            // this.password = "";
+            // this.phone = "";
           } else {
             //注册失败
             wx.hideLoading();
