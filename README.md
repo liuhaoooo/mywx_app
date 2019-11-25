@@ -5,7 +5,7 @@ eggjs-----------后端代码，使用使用nodejs,eggjs,mysql,redis等技术<br>
 wechat----------前端代码，使用mpvue小程序框架<br>
 mysql-----------项目数据库的设计<br>
 # 扫码体验
-<img src="https://github.com/liuhaoooo/mywx_app/blob/master/demoimgs/.PNG" width="300px">
+<img src="https://github.com/liuhaoooo/mywx_app/blob/master/demoimgs/test.jpg" width="300px">
 
 # 截图项目
 
