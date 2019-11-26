@@ -105,7 +105,10 @@ export default {
   top: 0;
   right: 0;
   z-index: 99;
-  font-size: 26rpx;
+  font-size: 28rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;/*文字超出显示三点*/ 
+  white-space:nowrap;
 }
 .button {
   margin-top: 100rpx;
