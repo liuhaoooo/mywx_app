@@ -2,7 +2,7 @@
   <div class="list">
     <scroll-view scroll-y enable-back-to-top="true">
       <div v-if="!hasshoucang" class="content">
-        <img src="/static/images/gouwuche.png" alt />
+        <span>收藏竟然是空的~</span>
       </div>
       <div v-else class="slideview">
         <mp-slideview
@@ -102,13 +102,11 @@ export default {
   height: 100%;
   background: #f7f7f7;
 }
-.content img{
+.content>span{
   position: absolute;
-  top:20%;
-  left: 20%;
-  width: 60%;
-  height: 25%;
-  z-index: 999;
+  top: 300rpx;
+  left: 35%;
+  color: #999;
 }
 .info {
   position: relative;

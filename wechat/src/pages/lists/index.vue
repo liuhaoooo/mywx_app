@@ -2,7 +2,7 @@
   <div class="list">
     <scroll-view scroll-y enable-back-to-top="true">
       <div v-if="!hasgouwuche" class="content">
-        <img src="/static/images/gouwuche.png" alt />
+        <img src="/static/images/gouwuche.jpg" alt />
       </div>
       <div v-else class="slideview">
         <mp-slideview
@@ -108,14 +108,17 @@ export default {
   text-align: center;
   width: 100%;
   height: 100%;
-  background: #f7f7f7;
+  background: rgb(243, 241, 242);
 }
 .content img{
   position: absolute;
-  top:20%;
-  left: 20%;
-  width: 60%;
-  height: 25%;
+  margin:100rpx auto;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 50%;
   z-index: 999;
 }
 .info {
