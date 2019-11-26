@@ -1,10 +1,10 @@
 <template>
   <div class="list">
-    <scroll-view scroll-y enable-back-to-top="true">
-      <div v-if="!hasshoucang" class="content">
-        <span>收藏竟然是空的~</span>
-      </div>
-      <div v-else class="slideview">
+    <div v-if="!hasshoucang" class="content">
+      <span>收藏竟然是空的~</span>
+    </div>
+    <scroll-view v-else scroll-y enable-back-to-top="true">
+      <div class="slideview">
         <mp-slideview
           :buttons="slideButtons"
           @buttontap="slideButtonTap(item.id)"
@@ -63,7 +63,7 @@ export default {
         })
         .then(res => {
           this.productInfo = res;
-          this.hasshoucang = this.productInfo.length>0?true:false
+          this.hasshoucang = this.productInfo.length > 0 ? true : false;
           wx.stopPullDownRefresh();
         });
     },
@@ -87,7 +87,7 @@ export default {
             duration: 2000
           });
         });
-    },
+    }
   }
 };
 </script>
@@ -102,7 +102,7 @@ export default {
   height: 100%;
   background: #f7f7f7;
 }
-.content>span{
+.content > span {
   position: absolute;
   top: 300rpx;
   left: 35%;
@@ -128,5 +128,4 @@ export default {
   right: 0;
   top: 20%;
 }
-
 </style>

@@ -1,16 +1,17 @@
 <template>
   <div class="list">
-    <scroll-view scroll-y enable-back-to-top="true">
-      <div v-if="!hasgouwuche" class="content">
-        <img src="/static/images/gouwuche.jpg" alt />
-      </div>
-      <div v-else class="slideview">
+    <div v-if="!hasgouwuche" class="content">
+      <span>购物车竟然是空的~</span>
+      <img src="/static/images/gouwuche.jpg" alt />
+    </div>
+    <scroll-view v-else scroll-y enable-back-to-top="true">
+      <div class="slideview">
         <mp-slideview
           :buttons="slideButtons"
           @buttontap="slideButtonTap(item.id)"
           v-for="(item,index) in productInfo"
           :key="index"
-          throttle='60'
+          throttle="60"
         >
           <div class="info">
             <img :src="item.url" />
@@ -71,7 +72,7 @@ export default {
             data.price = mun.toFixed(2);
           }
           this.productInfo = res;
-          this.hasgouwuche = this.productInfo.length>0?true:false
+          this.hasgouwuche = this.productInfo.length > 0 ? true : false;
           wx.stopPullDownRefresh();
         });
     },
@@ -95,7 +96,7 @@ export default {
             duration: 2000
           });
         });
-    },
+    }
   }
 };
 </script>
@@ -110,16 +111,23 @@ export default {
   height: 100%;
   background: rgb(243, 241, 242);
 }
-.content img{
+.content img {
   position: absolute;
-  margin:100rpx auto;
-  top:0;
+  margin: 100rpx auto;
+  top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   width: 100%;
   height: 50%;
   z-index: 999;
+}
+.content > span {
+  position: absolute;
+  top: 300rpx;
+  left: 35%;
+  color: #999;
+  z-index: 888;
 }
 .info {
   position: relative;
