@@ -60,7 +60,14 @@ export default {
       }
     };
   },
+  onShow(){
+    this.address.name=this.address.phone=this.address.details="";
+    this.address.region=[]
+  },
   computed: {
+    openid() {
+      return this.$store.getters.openid;
+    },
     disabled() {
       //监听表单是否输入完整
       const { name, phone, region, details } = this.address;
@@ -71,11 +78,48 @@ export default {
     }
   },
   methods: {
+    //选择地区
     bindRegionChange(e) {
       this.address.region = e.target.value;
     },
+    //添加地址
     add() {
-      console.log(this.address);
+      const { name, phone, details } = this.address;
+      let region =
+        this.address.region[0] +
+        "-" +
+        this.address.region[1] +
+        "-" +
+        this.address.region[2];
+      let data = {
+        openid: this.openid,
+        name,
+        phone,
+        details,
+        region
+      };
+      this.$https
+        .request({
+          url: this.$interfaces.addaddress,
+          method: "post",
+          data
+        })
+        .then(res => {
+          if (res.success) {
+            wx.redirectTo({url:"../address/main"})
+            wx.showToast({
+              title: res.msg,
+              icon: "success",
+              duration: 2000
+            });
+          } else {
+            wx.showToast({
+              title: res.msg,
+              icon: "none",
+              duration: 2000
+            });
+          }
+        });
     }
   }
 };
@@ -106,9 +150,9 @@ export default {
   right: 0;
   z-index: 99;
   font-size: 28rpx;
-  overflow:hidden;
-  text-overflow:ellipsis;/*文字超出显示三点*/ 
-  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /*文字超出显示三点*/
+  white-space: nowrap;
 }
 .button {
   margin-top: 100rpx;

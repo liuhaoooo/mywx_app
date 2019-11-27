@@ -15,6 +15,7 @@ const interfaces = {
     getsort:`${domain}api/getsort`,//获取类别
     shoucang:`${domain}api/shoucang`,//加入收藏
     cancelshoucang:`${domain}api/cancelshoucang`,//取消收藏
-    getshoucang:`${domain}api/getshoucang`//获取收藏
+    getshoucang:`${domain}api/getshoucang`,//获取收藏
+    addaddress:`${domain}api/addaddress`,//添加地址
 }
 module.exports = interfaces

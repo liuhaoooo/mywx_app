@@ -38,13 +38,13 @@ class UserService extends Service {
             }
         }
     }
-    async getuserinfo(openid){//获取用户信息
+    async getuserinfo(openid) {//获取用户信息
         let options = {
             where: { openid: openid },
             columns: ['phone']
-          }
-          let data = await this.app.mysql.select('user', options);
-          return data;
+        }
+        let data = await this.app.mysql.select('user', options);
+        return data;
     }
     async login(data) {//登录
         const { app } = this;

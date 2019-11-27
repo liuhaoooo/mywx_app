@@ -24,4 +24,6 @@ module.exports = app => {
   router.post('/api/adddongtai',jwt,controller.dongtai.adddongtai)//添加动态
   router.post('/api/adddongtaitext',jwt,controller.dongtai.adddongtaitext)
   router.post('/api/getdongtai',controller.dongtai.getdongtai)//获取动态
+  //-------------收货地址部分-----------------------------------------------
+  router.post('/api/addaddress',controller.address.addaddress);//添加收货地址
 };
