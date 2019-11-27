@@ -60,9 +60,9 @@ export default {
       }
     };
   },
-  onShow(){
-    this.address.name=this.address.phone=this.address.details="";
-    this.address.region=[]
+  onShow() {
+    this.address.name = this.address.phone = this.address.details = "";
+    this.address.region = [];
   },
   computed: {
     openid() {
@@ -106,7 +106,9 @@ export default {
         })
         .then(res => {
           if (res.success) {
-            wx.redirectTo({url:"../address/main"})
+            wx.navigateBack({
+              delta: 1
+            });
             wx.showToast({
               title: res.msg,
               icon: "success",
