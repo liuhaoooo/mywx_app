@@ -26,4 +26,5 @@ module.exports = app => {
   router.post('/api/getdongtai',controller.dongtai.getdongtai)//获取动态
   //-------------收货地址部分-----------------------------------------------
   router.post('/api/addaddress',controller.address.addaddress);//添加收货地址
+  router.post('/api/getaddress',controller.address.getaddress);//获取收货地址
 };
