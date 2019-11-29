@@ -13,7 +13,7 @@ module.exports = app => {
   router.post('/api/login',controller.user.login);//登录
   router.post('/api/sendsms',controller.user.sendsms);//发送验证码注册
   //-------------商品部分-------------------------------------------
-  router.post('/api/getstore',jwt,controller.store.getstore)//获取信息
+  router.post('/api/getstore',controller.store.getstore)//获取信息
   router.post('/api/addgouwuche',jwt,controller.store.addgouwuche)//加入购物车
   router.post('/api/delgouwuche',jwt,controller.store.delgouwuche)//删除购物车
   router.get('/api/getsort',jwt,controller.store.getsort)//获取商品类别

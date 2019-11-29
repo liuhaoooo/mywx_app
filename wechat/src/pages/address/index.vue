@@ -41,7 +41,7 @@ export default {
   },
   computed: {
     openid() {
-      return this.$store.getters.openid;
+      return this.$store.getters.openid;  
     }
   },
   methods:{

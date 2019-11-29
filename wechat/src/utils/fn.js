@@ -5,7 +5,7 @@ import store from '../store/index'
 const fn = {
   //获取openid
   getopenid() {
-    wx.login({
+    wx.login({  
       success: res => {
         if (res.code) {
           let data = {

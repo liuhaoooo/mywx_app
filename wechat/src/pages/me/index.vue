@@ -3,7 +3,7 @@
     <div class="me">
       <div class="header">
         <img src="/static/images/background.jpg" alt />
-        <div class="userinfo">
+        <div class="userinfo" v-if="wxuserinfo">
           <div class="avatar">
             <img :src="wxuserinfo.avatarUrl" alt="">
           </div>
