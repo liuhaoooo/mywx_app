@@ -3,14 +3,16 @@
     <div class="me">
       <div class="header">
         <img src="/static/images/background.jpg" alt />
-        <div class="userinfo" v-if="wxuserinfo">
+        <div class="userinfo">
           <div class="avatar">
-            <img :src="wxuserinfo.avatarUrl" alt="">
+            <img v-if="wxuserinfo" :src="wxuserinfo.avatarUrl" alt="">
+            <img v-else src="/static/images/touxiang.png" alt />
           </div>
           <div class="name">
-            <span>{{wxuserinfo.nickName}}</span>
+            <span v-if="wxuserinfo">{{wxuserinfo.nickName}}</span>
+            <span v-else @click="to('tologin')">点击登录</span>
             <br />
-            <i :class="'iconfont icon-xingbie'+wxuserinfo.gender"></i>
+            <i v-if="wxuserinfo" :class="'iconfont icon-xingbie'+wxuserinfo.gender"></i>
           </div>
         </div>
       </div>
