@@ -4,7 +4,7 @@
     <div v-if="data.length>0">
       <div class="address" v-for="item in data" :key="item.id">
         <div class="content">
-          <div class="name">{{item.name}},{{item.phone}}</div>
+          <div class="name">{{item.name}}，{{item.phone}}</div>
           <div class="details">收货地址：{{item.region}}-{{item.details}}</div>
           <i class="iconfont icon-bianji"></i>
         </div>
