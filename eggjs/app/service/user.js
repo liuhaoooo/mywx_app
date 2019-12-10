@@ -88,7 +88,7 @@ class UserService extends Service {
         const { app } = this
         return new Promise((reslove, reject) => {
             const palyload = { openid: openid };//定义token规则
-            jwt.sign(palyload, app.config.secret, { expiresIn: 3600 }, (err, token) => {//生成token          
+            jwt.sign(palyload, app.config.secret, { expiresIn: 86400 }, (err, token) => {//生成token          
                 if (err) { reject(err) }
                 else {
                     reslove(token)
