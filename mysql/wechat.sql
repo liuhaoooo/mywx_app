@@ -3,7 +3,7 @@
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for collection
+--Table structure for collection
 -- ----------------------------
 DROP TABLE IF EXISTS `collection`;
 CREATE TABLE `collection` (
@@ -14,7 +14,7 @@ CREATE TABLE `collection` (
 ) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for dongtai
+--Table structure for dongtai
 -- ----------------------------
 DROP TABLE IF EXISTS `dongtai`;
 CREATE TABLE `dongtai` (
