@@ -29,7 +29,7 @@ CREATE TABLE `dongtai` (
 ) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for dongtai_img
+--Table structure for dongtai_img
 -- ----------------------------
 DROP TABLE IF EXISTS `dongtai_img`;
 CREATE TABLE `dongtai_img` (
@@ -40,7 +40,7 @@ CREATE TABLE `dongtai_img` (
 ) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for gouwuche
+--Table structure for gouwuche
 -- ----------------------------
 DROP TABLE IF EXISTS `gouwuche`;
 CREATE TABLE `gouwuche` (
@@ -54,7 +54,7 @@ CREATE TABLE `gouwuche` (
 ) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for store
+--Table structure for store
 -- ----------------------------
 DROP TABLE IF EXISTS `store`;
 CREATE TABLE `store` (
