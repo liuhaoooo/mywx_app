@@ -53,5 +53,4 @@ const https = {
         })
     }
 }
-
 export default https
