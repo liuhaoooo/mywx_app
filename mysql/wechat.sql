@@ -1,7 +1,7 @@
 
 
 SET FOREIGN_KEY_CHECKS=0;
--- ----------------------------
+-- ----------------------------      
 --Table structure for collection
 -- ----------------------------
 DROP TABLE IF EXISTS `collection`;
