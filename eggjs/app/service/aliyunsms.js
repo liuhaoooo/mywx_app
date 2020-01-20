@@ -63,11 +63,7 @@ class AliyunsmsService extends Service {
 
     async checkcode(PhoneNumbers, TemplateCode, code) {//校验验证码
         const data = await this.app.redis.get(`code_${PhoneNumbers}_${TemplateCode}`);
-        if (code == data) {
-            return true
-        } else {
-            return false
-        }
+        return code == data
     }
 
 }
