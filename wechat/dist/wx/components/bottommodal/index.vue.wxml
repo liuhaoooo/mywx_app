@@ -1,0 +1,18 @@
+<template name="794bfcbb">
+  <view class="_div data-v-76129c22 modal" wx:if="{{modal}}">
+    <view class="_div data-v-76129c22 close" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"></view>
+    <view class="_div data-v-76129c22 content">
+      <view class="_div data-v-76129c22 contentimg">
+        <image src="{{details.url}}" alt class="_img data-v-76129c22"></image>
+      </view>
+      <view class="_div data-v-76129c22 contentprice"> 售价 <label class="_span data-v-76129c22">￥{{details.price}}</label></view>
+      <view class="_div data-v-76129c22 count"><label class="_span data-v-76129c22">数量：</label>
+        <view class="_div data-v-76129c22 addcount">
+          <view class="_i data-v-76129c22 iconfont icon-jian left" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}"></view>
+          <view class="_div data-v-76129c22 con">{{count}}</view>
+          <view class="_i data-v-76129c22 iconfont icon-jia1 right" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}"></view>
+        </view>
+      </view> <button class="_button data-v-76129c22 addgouwuche" bindtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}">确认</button>
+    </view>
+  </view>
+</template>

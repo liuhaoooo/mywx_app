@@ -1,0 +1,19 @@
+<template name="5afdee4c">
+  <view class="_div data-v-625296f2 list">
+    <view wx:if="{{!hasgouwuche}}" class="_div data-v-625296f2 content"><label class="_span data-v-625296f2">购物车竟然是空的~</label>
+      <image src="/static/images/gouwuche.jpg" alt class="_img data-v-625296f2"></image>
+    </view>
+    <scroll-view wx:else scroll-y enable-back-to-top="true" class="_scroll-view data-v-625296f2">
+      <view class="_div data-v-625296f2 slideview">
+        <mp-slideview buttons="{{slideButtons}}" bindbuttontap="handleProxy" wx:key="index" key="{{index}}" throttle="60" data-eventid="{{'0_'+index}}" data-comkey="{{$k}}" wx:for="{{productInfo}}" wx:for-index="index" wx:for-item="item" class="_mp-slideview data-v-625296f2">
+          <view class="_div data-v-625296f2 info">
+            <image src="{{item.url}}" class="_img data-v-625296f2"></image>
+            <view class="_div data-v-625296f2 text">{{item.text}}</view>
+            <view class="_div data-v-625296f2 price">总价:{{item.price}}</view>
+            <view class="_div data-v-625296f2 count">数量:{{item.count}}</view>
+          </view>
+        </mp-slideview>
+      </view>
+    </scroll-view>
+  </view>
+</template>

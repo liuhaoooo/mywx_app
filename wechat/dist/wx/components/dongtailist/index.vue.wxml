@@ -1,0 +1,28 @@
+<template name="da853ae2">
+  <view class="_div data-v-e0f7fc14 list">
+    <view class="_div data-v-e0f7fc14 top">
+      <image src="/static/images/avatar.png" alt class="_img data-v-e0f7fc14"></image> <label class="_span data-v-e0f7fc14">{{data.phone}}</label>
+    </view>
+    <view class="_div data-v-e0f7fc14 text" wx:if="{{data.text}}">{{data.text}}</view>
+    <view class="_div data-v-e0f7fc14 mid" wx:if="{{data.url}}">
+      <view class="_div data-v-e0f7fc14 responsive" wx:key="index" key="{{index}}" wx:for="{{data.url}}" wx:for-index="index" wx:for-item="img">
+        <image src="{{img}}" alt bindtap="handleProxy" data-eventid="{{'0_'+index}}" data-comkey="{{$k}}" class="_img data-v-e0f7fc14"></image>
+      </view>
+      <view class="_div data-v-e0f7fc14 clearfix"></view>
+    </view>
+    <view class="_div data-v-e0f7fc14 msg"><label class="_span data-v-e0f7fc14 phone">{{data.model}}</label> <label class="_span data-v-e0f7fc14 date">{{data.time}}</label></view>
+    <view class="_div data-v-e0f7fc14 bottom">
+      <view class="_ul data-v-e0f7fc14">
+        <view class="_li data-v-e0f7fc14">
+          <view class="_i data-v-e0f7fc14 iconfont icon-zan"></view>
+        </view>
+        <view class="_li data-v-e0f7fc14">
+          <view class="_i data-v-e0f7fc14 iconfont icon-iconpinglun"></view>
+        </view>
+        <view class="_li data-v-e0f7fc14">
+          <view class="_i data-v-e0f7fc14 iconfont icon-zhuanfa-"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

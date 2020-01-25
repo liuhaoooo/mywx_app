@@ -1,0 +1,26 @@
+<import src="/components/iconliebiao1/index.vue.wxml" />
+<import src="/components/liebiao/index.vue.wxml" /><template name="2f117ae2">
+  <scroll-view scroll-y class="_scroll-view data-v-1e30f408">
+    <view class="_div data-v-1e30f408 me">
+      <view class="_div data-v-1e30f408 header">
+        <image src="/static/images/background.jpg" alt class="_img data-v-1e30f408"></image>
+        <view class="_div data-v-1e30f408 userinfo">
+          <view class="_div data-v-1e30f408 avatar">
+            <image wx:if="{{wxuserinfo}}" src="{{wxuserinfo.avatarUrl}}" alt class="_img data-v-1e30f408"></image>
+            <image wx:else src="/static/images/touxiang.png" alt class="_img data-v-1e30f408"></image>
+          </view>
+          <view class="_div data-v-1e30f408 name"><label wx:if="{{wxuserinfo}}" class="_span data-v-1e30f408">{{wxuserinfo.nickName}}</label><label wx:else bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_span data-v-1e30f408">点击登录</label>
+            <view class="_br data-v-1e30f408"></view>
+            <view wx:if="{{wxuserinfo}}" class="_i data-v-1e30f408 {{'iconfont icon-xingbie' + wxuserinfo.gender}}"></view>
+          </view>
+        </view>
+      </view>
+      <view class="_div data-v-1e30f408 mid">
+        <view class="_div data-v-1e30f408 i"><template data="{{...$root[$kk+'0'], $root}}" is="2fd2be70"></template></view>
+        <view class="_div data-v-1e30f408 liebiao"><template title="手机号" icon="icon-shouji" data="{{...$root[$kk+'1'], $root}}" is="2ab7c256"></template> <template title="收货地址" icon="icon-dizhi" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'2'], $root}}" is="2ab7c256"></template> <template title="修改密码" icon="icon-suo1" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'3'], $root}}" is="2ab7c256"></template> <template title="关于我们" icon="icon-guanyuwomen" bindtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'4'], $root}}" is="2ab7c256"></template></view>
+      </view>
+      <view class="_div data-v-1e30f408 abc"></view>
+      <view class="_div data-v-1e30f408 unlogin" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">退出登录</view>
+    </view>
+  </scroll-view>
+</template>

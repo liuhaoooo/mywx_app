@@ -1,0 +1,64 @@
+@import "../../common/vendor.wxss";
+
+.content.data-v-625296f2 {
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background: rgb(243, 241, 242);
+}
+.content ._img.data-v-625296f2 {
+  position: absolute;
+  margin: 100rpx auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 999;
+}
+.content > ._span.data-v-625296f2 {
+  position: absolute;
+  top: 300rpx;
+  left: 35%;
+  color: #999;
+  z-index: 888;
+}
+.info.data-v-625296f2 {
+  position: relative;
+  width: 100%;
+  height: 260rpx;
+  background: #f7f7f7;
+  color: #999;
+  border-bottom: #e6e6e6 solid 2rpx;
+}
+.info ._img.data-v-625296f2 {
+  height: 100%;
+  width: 260rpx;
+  position: absolute;
+  left: 0;
+}
+.info > .text.data-v-625296f2 {
+  width: 60%;
+  position: absolute;
+  right: 0;
+  top: 20%;
+}
+.info > .price.data-v-625296f2 {
+  width: 320rpx;
+  position: absolute;
+  right: 20rpx;
+  bottom: 60rpx;
+  text-align: right;
+  color: rgb(245, 89, 89);
+}
+.info > .count.data-v-625296f2 {
+  width: 120rpx;
+  position: absolute;
+  right: 20rpx;
+  bottom: 0;
+  text-align: right;
+}

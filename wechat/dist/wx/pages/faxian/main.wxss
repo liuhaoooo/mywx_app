@@ -1,0 +1,113 @@
+@import "../../common/vendor.wxss";
+
+.tosend.data-v-92adce86 {
+  z-index: 100;
+  width: 80rpx;
+  height: 80rpx;
+  background: rgba(61, 167, 238, 0.685);
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20rpx;
+  left: 20rpx;
+  font-size: 48rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: rgb(255, 255, 255);
+}
+.list.data-v-e0f7fc14 {
+  margin-bottom: 20rpx;
+  background: rgb(250, 250, 250);
+  overflow: hidden;
+}
+.top.data-v-e0f7fc14 {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 85rpx;
+}
+.text.data-v-e0f7fc14 {
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+  color: #333;
+}
+.top ._img.data-v-e0f7fc14 {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 20rpx;
+  top: 14rpx;
+}
+.top ._span.data-v-e0f7fc14 {
+  position: absolute;
+  top: 15%;
+  left: 76rpx;
+  color: #666;
+}
+.msg.data-v-e0f7fc14 {
+  width: 100%;
+  height: 60rpx;
+  text-align: right;
+  color: rgb(173, 173, 173);
+  margin-top: 10rpx;
+  font-size: 28rpx;
+}
+.msg > .date.data-v-e0f7fc14 {
+  width: 60%;
+  position: absolute;
+  right: 12rpx;
+  text-align: right;
+}
+.msg > .phone.data-v-e0f7fc14 {
+  position: absolute;
+  left: 20rpx;
+  text-align: left;
+  width: 30%;
+}
+.bottom.data-v-e0f7fc14 {
+  width: 100%;
+  height: 60rpx;
+}
+.bottom ._ul.data-v-e0f7fc14 {
+  position: absolute;
+  right: -44rpx;
+}
+.bottom ._ul ._li.data-v-e0f7fc14 {
+  float: left;
+  margin-right: 80rpx;
+  color: #4fb9f1;
+}
+._li ._i.data-v-e0f7fc14 {
+  font-size: 40rpx;
+}
+.mid.data-v-e0f7fc14 {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.responsive.data-v-e0f7fc14 {
+  width: 49.9%;
+  overflow: hidden;
+  height: 360rpx;
+}
+.responsive ._img.data-v-e0f7fc14 {
+  width: 100%;
+}
+@media only screen and (max-width: 400px) {
+.responsive.data-v-e0f7fc14 {
+    width: 49.9%;
+    max-height: 360rpx;
+}
+}
+@media only screen and (max-width: 300px) {
+.responsive.data-v-e0f7fc14 {
+    width: 100%;
+}
+}
+.clearfix.data-v-e0f7fc14:after {
+  content: "";
+  display: table;
+  clear: both;
+}

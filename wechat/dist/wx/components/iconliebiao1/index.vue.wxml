@@ -1,0 +1,8 @@
+<template name="2fd2be70">
+  <view class="_div data-v-072a9563 list">
+    <view class="_div data-v-072a9563 option" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'0_'+index}}" data-comkey="{{$k}}" wx:for="{{datas}}" wx:for-index="index" wx:for-item="item">
+      <view class="_i data-v-072a9563 {{'iconfont ' + item.icon}}"></view>
+      <view class="_div data-v-072a9563 title">{{item.title}}</view>
+    </view>
+  </view>
+</template>

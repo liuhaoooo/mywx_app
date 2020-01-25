@@ -1,0 +1,11 @@
+<template name="a4954a4c">
+  <view class="_div data-v-06ba287e">
+    <view wx:if="{{data.length==0}}" style="text-align: center;line-height: 300px;color: #999;" class="_div data-v-06ba287e">暂时没有该分类</view>
+    <view class="_div data-v-06ba287e concent" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'0_'+index}}" data-comkey="{{$k}}" wx:for="{{data}}" wx:for-index="index" wx:for-item="item">
+      <image src="{{item.url}}" alt class="_img data-v-06ba287e"></image>
+      <view class="_div data-v-06ba287e text">{{item.text}}</view>
+      <view class="_div data-v-06ba287e detail">{{item.details}}</view>
+      <view class="_i data-v-06ba287e iconfont icon-gouwuche1"></view> <label class="_span data-v-06ba287e">￥{{item.price}}</label>
+    </view>
+  </view>
+</template>

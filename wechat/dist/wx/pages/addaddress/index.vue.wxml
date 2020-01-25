@@ -1,0 +1,16 @@
+<template name="a60a5b2c">
+  <view class="_div data-v-27519452">
+    <view class="_div data-v-27519452 content">
+      <view class="_div data-v-27519452 input"> 姓名 <input value="{{address.name}}" bindinput="handleProxy" class="_input data-v-27519452 weui-input" placeholder="收货人姓名" placeholder-style="color:#b8b8b8;font-size: 30rpx;" data-eventid="{{'0'}}" data-comkey="{{$k}}" /></view>
+      <view class="_div data-v-27519452 input"> 电话 <input type="number" value="{{address.phone}}" bindinput="handleProxy" class="_input data-v-27519452 weui-input" placeholder="收货人手机号" placeholder-style="color:#b8b8b8;font-size: 30rpx;" data-eventid="{{'1'}}" data-comkey="{{$k}}" /></view>
+      <view class="_div data-v-27519452 input"> 地区 <picker mode="region" bindchange="handleProxy" value="{{address.region}}" custom-item="{{customItem}}" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_picker data-v-27519452">
+          <view class="_view data-v-27519452 picker">
+            <view wx:if="{{address.region.length==0}}" class="_div data-v-27519452">请选择地区</view>
+            <view wx:else class="_div data-v-27519452">{{address.region[0]}}-{{address.region[1]}}-{{address.region[2]}}</view>
+          </view>
+        </picker>
+      </view>
+      <view class="_div data-v-27519452 input"> 地址 <input value="{{address.details}}" bindinput="handleProxy" class="_input data-v-27519452 weui-input" placeholder="详细地址信息" placeholder-style="color:#b8b8b8;font-size: 30rpx;" data-eventid="{{'3'}}" data-comkey="{{$k}}" /></view>
+    </view> <button class="_button data-v-27519452 button" type="primary" plain="{{false}}" disabled="{{disabled}}" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">完成</button>
+  </view>
+</template>

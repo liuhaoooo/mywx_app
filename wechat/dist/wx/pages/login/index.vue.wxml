@@ -1,0 +1,15 @@
+<import src="/components/inputs/index.vue.wxml" /><template name="9b1448a4">
+  <view class="_div data-v-a268f14a">
+    <view class="_div data-v-a268f14a login">
+      <view class="_div data-v-a268f14a avatar">
+        <open-data type="userAvatarUrl" class="_open-data data-v-a268f14a"></open-data>
+      </view>
+      <view class="_div data-v-a268f14a name">
+        <open-data type="userNickName" class="_open-data data-v-a268f14a"></open-data>
+      </view> <template maxlength="15" icon="icon-suo" placeholder="请输入密码,长度6~15" value="{{password}}" bindchange="handleProxy" top="38%" password="true" data-eventid="{{'0'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'2'], $root}}" is="2dd8d70c"></template> <template maxlength="11" type="number" icon="icon-shoujihao" placeholder="请输入手机号码" value="{{phone}}" bindchange="handleProxy" top="50%" wx:if="{{islogin}}" data-eventid="{{'1'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'3'], $root}}" is="2dd8d70c"></template>
+      <view class="_div data-v-a268f14a code"><template maxlength="6" type="number" icon="icon-yanzhengma" placeholder="请输入验证码" value="{{code}}" bindchange="handleProxy" wx:if="{{islogin}}" data-eventid="{{'2'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'4'], $root}}" is="2dd8d70c"></template></view> <button class="_button data-v-a268f14a codebuttom" wx:if="{{islogin}}" bindtap="handleProxy" disabled="{{count != '获取验证码'}}" data-eventid="{{'3'}}" data-comkey="{{$k}}">{{count}}</button> <button class="_button data-v-a268f14a button zhuce" plain="false" wx:if="{{islogin}}" bindtap="handleProxy" disabled="{{disabled}}" data-eventid="{{'5'}}" data-comkey="{{$k}}">注册</button><button class="_button data-v-a268f14a button denglu" plain="false" bindtap="handleProxy" wx:else disabled="{{disabled1}}" data-eventid="{{'4'}}" data-comkey="{{$k}}">登录</button>
+      <view class="_div data-v-a268f14a tologin" wx:if="{{islogin}}" bindtap="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}">已注册？去登录</view>
+      <view class="_div data-v-a268f14a tologin" wx:else bindtap="handleProxy" data-eventid="{{'6'}}" data-comkey="{{$k}}">未注册？去注册</view>
+    </view>
+  </view>
+</template>

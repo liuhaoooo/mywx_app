@@ -1,0 +1,8 @@
+<template name="2ab7c256">
+  <view class="_div data-v-2a254286 list" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+    <view wx:if="{{icon}}" class="_i data-v-2a254286 {{'iconfont ' + icon + ' lefticon'}}"></view>
+    <view class="_div data-v-2a254286 title">{{title}}</view>
+    <view wx:if="{{text}}" class="_div data-v-2a254286 text">{{text}}</view>
+    <view class="_i data-v-2a254286 iconfont icon-arrow-right righticon"></view>
+  </view>
+</template>

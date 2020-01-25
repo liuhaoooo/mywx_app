@@ -1,0 +1,16 @@
+@import "../../common/vendor.wxss";
+
+.name.data-v-f208ac80 {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.name > .button.data-v-f208ac80 {
+  border: none;
+  width: 70%;
+  top: 40%;
+  margin: 400rpx auto;
+  background: #07c160;
+  color: white;
+}

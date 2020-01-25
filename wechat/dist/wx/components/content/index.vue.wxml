@@ -1,0 +1,8 @@
+<template name="51942c3e">
+  <view class="_div data-v-09c1120e content">
+    <view class="_div data-v-09c1120e option" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'0_'+index}}" data-comkey="{{$k}}" wx:for="{{datas}}" wx:for-index="index" wx:for-item="data">
+      <image src="{{'../../../static/temp/'+data.img}}" wx:if="{{data.img}}" class="_img data-v-09c1120e"></image>
+      <view class="_div data-v-09c1120e text">{{data.text}}</view> <label class="_span data-v-09c1120e">{{data.price}}</label>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,32 @@
+<import src="/components/bottommodal/index.vue.wxml" /><template name="570d4187">
+  <view class="_div data-v-04103598">
+    <scroll-view scroll-y enable-back-to-top="true" class="_scroll-view data-v-04103598">
+      <view class="_div data-v-04103598 details">
+        <view class="_div data-v-04103598 swiper">
+          <swiper indicator-dots="false" autoplay="true" interval="3000" duration="500" display-multiple-items="1" easing-function="default" circular="true" class="_swiper data-v-04103598">
+            <block>
+              <swiper-item class="_swiper-item data-v-04103598">
+                <image src="{{details.url}}" class="_image data-v-04103598 slide-image"></image>
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+        <view class="_div data-v-04103598 text">
+          <view class="_div data-v-04103598 details">{{details.text}}   {{details.details}}</view>
+          <view class="_div data-v-04103598 text_price"> 售价￥ <label class="_span data-v-04103598">{{details.price}}</label></view>
+          <view class="_i data-v-04103598 iconfont icon-fenxiang"></view>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="_div data-v-04103598 bottom">
+      <view class="_div data-v-04103598 icon">
+        <view class="_i data-v-04103598 iconfont icon-shouye" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"></view>
+        <view class="_i data-v-04103598 iconfont icon-gouwuche" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}"></view>
+        <view class="_i data-v-04103598 iconfont icon-shoucang2" bindtap="handleProxy" wx:if="{{!details.isshoucang}}" data-eventid="{{'3'}}" data-comkey="{{$k}}"></view>
+        <view class="_i data-v-04103598 iconfont icon-shoucang1" bindtap="handleProxy" wx:else data-eventid="{{'2'}}" data-comkey="{{$k}}"></view>
+      </view>
+      <view class="_div data-v-04103598 button right" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">立即购买</view>
+      <view class="_div data-v-04103598 button left" bindtap="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}">加入购物车</view>
+    </view> <template bindclose="handleProxy" bindadd="handleProxy" data-eventid="{{'6'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1'], $root}}" is="794bfcbb"></template> <template bindclose="handleProxy" bindadd="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'2'], $root}}" is="794bfcbb"></template>
+  </view>
+</template>

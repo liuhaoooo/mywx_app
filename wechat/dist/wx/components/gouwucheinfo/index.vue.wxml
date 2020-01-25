@@ -1,0 +1,14 @@
+<template name="53a8d1b7">
+  <view class="_div data-v-4f6702ce">
+    <view class="_div data-v-4f6702ce">
+      <mp-slideview buttons="{{slideButtons}}" bindbuttontap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_mp-slideview data-v-4f6702ce">
+        <mp-cell value="左滑可以删除" footer="说明文字" class="_mp-cell data-v-4f6702ce"></mp-cell>
+      </mp-slideview>
+    </view>
+    <view class="_div data-v-4f6702ce">
+      <mp-slideview buttons="{{slideButtons}}" bindbuttontap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_mp-slideview data-v-4f6702ce">
+        <mp-cell value="左滑可以删除" footer="说明文字" class="_mp-cell data-v-4f6702ce"></mp-cell>
+      </mp-slideview>
+    </view>
+  </view>
+</template>

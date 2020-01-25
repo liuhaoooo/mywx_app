@@ -1,0 +1,54 @@
+<template name="6236cd5a">
+  <view class="_div data-v-698b7600">
+    <view class="_div data-v-698b7600 pay">
+      <view class="_div data-v-698b7600"> 实付： <label class="_span data-v-698b7600">￥{{total}}</label></view>
+      <view class="_div data-v-698b7600 button" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">结算</view>
+    </view>
+    <view class="_div data-v-698b7600">
+      <scroll-view scroll-y class="_scroll-view data-v-698b7600">
+        <view class="_div data-v-698b7600 order">
+          <view class="_div data-v-698b7600 list">
+            <view class="_div data-v-698b7600 address" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+              <view class="_div data-v-698b7600 content">
+                <view class="_i data-v-698b7600 iconfont icon-dizhi4"></view>
+                <view class="_div data-v-698b7600"> 点击选择收货地址</view>
+                <view class="_i data-v-698b7600 iconfont icon-arrow-right righticon"></view>
+              </view>
+            </view>
+            <view class="_div data-v-698b7600 store">
+              <view class="_div data-v-698b7600 content">
+                <view class="_div data-v-698b7600 tittle">购物清单</view>
+                <view class="_div data-v-698b7600 info">
+                  <image src="{{details.url}}" class="_img data-v-698b7600"></image>
+                  <view class="_div data-v-698b7600 text">{{details.text}}</view>
+                  <view class="_div data-v-698b7600 price">￥{{details.price}}</view>
+                  <view class="_div data-v-698b7600 count">x{{details.count}}</view>
+                  <view class="_div data-v-698b7600 prices"> 合计: <label class="_span data-v-698b7600">￥{{details.prices}}</label></view>
+                </view>
+                <view class="_div data-v-698b7600 textarea"> 买家留言 <input value="{{text}}" bindinput="handleProxy" class="_input data-v-698b7600 weui-input" placeholder="给卖家留言:(30字以内)" placeholder-style="color:#b8b8b8;font-size: 30rpx;" data-eventid="{{'2'}}" data-comkey="{{$k}}" /></view>
+              </view>
+            </view>
+            <view class="_div data-v-698b7600 payway">
+              <view class="_div data-v-698b7600 content">
+                <title class="_title data-v-698b7600">支付方式</title>
+                <view class="_div data-v-698b7600 lists" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'3_'+index}}" data-comkey="{{$k}}" wx:for="{{payway}}" wx:for-index="index" wx:for-item="item">
+                  <view class="_i data-v-698b7600 {{'iconfont ' + item.icon}}"></view> <label class="_span data-v-698b7600"> {{item.tittle}}</label>
+                  <view class="_i data-v-698b7600 {{index == current  ? 'iconfont icon-gou-blue righticon'  : 'iconfont icon-yuanquan righticon'}}"></view>
+                </view>
+              </view>
+            </view>
+            <view class="_div data-v-698b7600 pricelist">
+              <view class="_div data-v-698b7600 content">
+                <view class="_div data-v-698b7600"> 商品金额 <label class="_span data-v-698b7600">￥{{details.prices}}</label></view>
+                <view class="_div data-v-698b7600"> 优惠抵扣 <label class="_span data-v-698b7600">-￥{{discount}}</label></view>
+                <view class="_div data-v-698b7600"> 运费 <label class="_span data-v-698b7600">+￥{{freight}}</label></view>
+                <view class="_div data-v-698b7600"> 实际支付 <label class="_span data-v-698b7600">￥{{total}}</label></view>
+              </view>
+            </view>
+            <view class="_div data-v-698b7600"></view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,34 @@
+@import "../../common/vendor.wxss";
+
+.content.data-v-27519452 {
+  width: 90%;
+  position: relative;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+.input.data-v-27519452 {
+  position: relative;
+  height: 100rpx;
+  line-height: 100rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx rgb(233, 231, 231) solid;
+  color: #666;
+}
+.input ._input.data-v-27519452,
+.input > picker.data-v-27519452 {
+  width: 82%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.button.data-v-27519452 {
+  margin-top: 100rpx;
+  width: 90%;
+}

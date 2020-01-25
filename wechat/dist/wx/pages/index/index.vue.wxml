@@ -1,0 +1,26 @@
+<import src="/components/iconliebiao/index.vue.wxml" />
+<import src="/components/msg/index.vue.wxml" />
+<import src="/components/backtotop/index.vue.wxml" /><template name="acb5b452">
+  <view class="_div data-v-b40a5cf8">
+    <scroll-view scroll-y enable-back-to-top="true" class="_scroll-view data-v-b40a5cf8">
+      <view class="_div data-v-b40a5cf8 position">
+        <view class="_i data-v-b40a5cf8 iconfont icon-weizhi lefticon"></view>
+        <view class="_div data-v-b40a5cf8 positiontext">{{address}}</view>
+      </view>
+      <mp-searchbar placeholder="请输入关键字搜索" bindinput="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_mp-searchbar data-v-b40a5cf8"></mp-searchbar>
+      <view class="_div data-v-b40a5cf8 mid">
+        <swiper indicator-dots="false" autoplay="true" interval="3000" duration="500" display-multiple-items="1" easing-function="default" circular="true" class="_swiper data-v-b40a5cf8">
+          <block wx:key="index" key="{{index}}" wx:for="{{imgUrls}}" wx:for-index="index" wx:for-item="item">
+            <swiper-item class="_swiper-item data-v-b40a5cf8">
+              <image src="{{item}}" class="_image data-v-b40a5cf8 slide-image"></image>
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class="_div data-v-b40a5cf8 liebiao"><template data="{{...$root[$kk+'2'], $root}}" is="0401ed06"></template></view>
+        <view class="_div data-v-b40a5cf8 tittle">— 为您推荐 —</view>
+        <view class="_div data-v-b40a5cf8 content"><template data="{{...$root[$kk+'3'], $root}}" is="e2687dcc"></template></view>
+      </view>
+      <view class="_div data-v-b40a5cf8 nomore">— 暂无更多 —</view>
+    </scroll-view> <template data="{{...$root[$kk+'4'], $root}}" is="cc350168"></template>
+  </view>
+</template>

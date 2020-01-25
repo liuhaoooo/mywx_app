@@ -1,0 +1,15 @@
+<template name="9deb8132">
+  <view class="_div data-v-17a6aa58 list">
+    <view wx:if="{{!hasshoucang}}" class="_div data-v-17a6aa58 content"><label class="_span data-v-17a6aa58">收藏竟然是空的~</label></view>
+    <scroll-view wx:else scroll-y enable-back-to-top="true" class="_scroll-view data-v-17a6aa58">
+      <view class="_div data-v-17a6aa58 slideview">
+        <mp-slideview buttons="{{slideButtons}}" bindbuttontap="handleProxy" wx:key="index" key="{{index}}" data-eventid="{{'0_'+index}}" data-comkey="{{$k}}" wx:for="{{productInfo}}" wx:for-index="index" wx:for-item="item" class="_mp-slideview data-v-17a6aa58">
+          <view class="_div data-v-17a6aa58 info">
+            <image src="{{item.url}}" class="_img data-v-17a6aa58"></image>
+            <view class="_div data-v-17a6aa58 text">{{item.text}}</view>
+          </view>
+        </mp-slideview>
+      </view>
+    </scroll-view>
+  </view>
+</template>

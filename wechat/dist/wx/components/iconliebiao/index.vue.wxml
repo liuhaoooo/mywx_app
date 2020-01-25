@@ -1,0 +1,8 @@
+<template name="0401ed06">
+  <view class="_div data-v-0a74ae38 list">
+    <view class="_div data-v-0a74ae38 option" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'0_'+index}}" data-comkey="{{$k}}" wx:for="{{datas}}" wx:for-index="index" wx:for-item="item">
+      <image src="{{'../../static/listicon/'+item.imgurl}}" alt wx:if="{{item.imgurl}}" class="_img data-v-0a74ae38"></image>
+      <view class="_div data-v-0a74ae38 title">{{item.title}}</view>
+    </view>
+  </view>
+</template>

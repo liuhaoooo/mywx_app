@@ -1,0 +1,12 @@
+<import src="/components/fenleidetails/index.vue.wxml" /><template name="f8ca8d50">
+  <view class="_div data-v-4d450cc5 concent">
+    <scroll-view class="_scroll-view data-v-4d450cc5 left" scroll-y="true" style="height:100vh">
+      <view class="_div data-v-4d450cc5">
+        <view class="_div data-v-4d450cc5 leibie {{[index == current ? 'ischeck' : '']}}" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'0_'+index}}" data-comkey="{{$k}}" wx:for="{{fenlei}}" wx:for-index="index" wx:for-item="item">{{item}}</view>
+      </view>
+    </scroll-view>
+    <scroll-view class="_scroll-view data-v-4d450cc5 right" scroll-y="true" style=" {{'height:' + windowHeight + 'px'}}">
+      <view class="_div data-v-4d450cc5"><label class="_span data-v-4d450cc5 span">{{span}}</label> <template data="{{...$root[$kk+'0'], $root}}" is="a4954a4c"></template></view>
+    </scroll-view>
+  </view>
+</template>
