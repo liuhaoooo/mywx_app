@@ -3,9 +3,9 @@ const https = {
     request(options = {}) {
         const { url, method, data, header = {} } = options;
         try {
-            let token = wx.getStorageSync("usertoken");
-            if (token) {
-                header.Authorization = token//在请求头中携带token
+            let value = wx.getStorageSync("usertoken");
+            if (value) {
+                header.Authorization = value//在请求头中携带token
             }else{
             }
         } catch (e) {
@@ -53,4 +53,5 @@ const https = {
         })
     }
 }
+
 export default https

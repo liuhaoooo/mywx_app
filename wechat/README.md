@@ -2,7 +2,7 @@
 # 使用的是mpvue小程序框架（用vue的语法开发的小程序）
 
 # 项目src目录结构
-- [├─config](#├─config)         
+- [├─config](#├─config)      
 - [├─src](#├─src)
 - [│  ├─components](#│--├─components)#-----------------------------组件目录
 - [│  │  ├─backtotop](#│--│--├─backtotop)#-------------------------返回顶部

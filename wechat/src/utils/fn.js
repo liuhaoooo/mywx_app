@@ -75,4 +75,4 @@ const fn = {
   }
 }
 
-export default fn;
+export default fn

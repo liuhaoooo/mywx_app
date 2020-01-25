@@ -8,6 +8,7 @@ import '../static/my_icon/iconfont.css';
 import '../static/weui-miniprogram/weui-wxss/dist/style/weui.wxss';
 
 
+
 Vue.prototype.$store = store;
 Vue.prototype.$interfaces = interfaces;
 Vue.prototype.$https = https;
