@@ -3,7 +3,7 @@
 const Controller = require('egg').Controller;
 
 class StoreController extends Controller {
-  async getstore() {//获取商品信息
+  async getstore() {//获取信息
     const { ctx } = this;
     let data;
     if (ctx.request.body.id && ctx.request.body.openid) {
@@ -19,13 +19,12 @@ class StoreController extends Controller {
     ctx.status = 200;
     ctx.body = data
   }
-  
-  async getsort() {//获取所以类别
+   
+   async getsort() {//获取所以类别
     const { ctx } = this;
     ctx.status = 200;
     ctx.body = await this.service.store.getsort();
-  }
-  
+  } 
   async addgouwuche() {//添加到购物车
     const { ctx } = this;
     const { openid, commodityid, count } = ctx.request.body;
@@ -48,7 +47,6 @@ class StoreController extends Controller {
       }
     }
   }
-
   async delgouwuche(){//删除购物车
     const { ctx } = this;
     let {openid,commodityid} = ctx.request.body;
@@ -66,7 +64,6 @@ class StoreController extends Controller {
       }
     }
   }
-
   async shoucang(){//收藏商品
     const {ctx} = this;
     const { openid, commodityid } = ctx.request.body;

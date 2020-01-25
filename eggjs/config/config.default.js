@@ -13,13 +13,6 @@ module.exports = appInfo => {
   config.middleware = [];
   //MySQL数据库
   config.mysql = {
-    // client: {
-    //   host: 'localhost',
-    //   port: '3306',
-    //   user: 'root',
-    //   password: '123456',
-    //   database: 'wechat',
-    // },
     client: {
       host: '101.37.25.179',
       port: '3306',
@@ -48,7 +41,6 @@ module.exports = appInfo => {
       ""
     ]
   };
-
   //修改端口号
   config.cluster = {
     listen: {

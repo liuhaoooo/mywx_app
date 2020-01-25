@@ -22,5 +22,6 @@ module.exports = (option, app) => {
             ctx.status = 401
             ctx.body = { msg: '请先登录' }
         }
+
     }
 }

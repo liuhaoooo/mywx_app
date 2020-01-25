@@ -16,8 +16,8 @@ class UserController extends Controller {
     ctx.status = 200;
     ctx.body = result
   }
-  async getuserinfo() {//获取用户信息
-    const { ctx } = this;
+  async getuserinfo(){//获取用户信息
+    const {ctx} = this;
     let data = await this.service.user.getuserinfo(ctx.request.body.openid)
     ctx.status = 200;
     ctx.body = data
@@ -54,10 +54,10 @@ class UserController extends Controller {
     ctx.body = res
   }
   async sendsms() {//发送验证码
-    const { ctx } = this;
+    const {ctx} = this;
     let { phone } = ctx.request.body;
     await this.service.aliyunsms.sendsms(phone, 'SMS_174022746')
-    ctx.status = 200
+    this.ctx.status = 200
   }
 }
 

@@ -17,9 +17,7 @@ class DongtaiController extends Controller {
             } else if (!stream.filename) {
                 continue
             } else {
-                let target = path.join(this.config.baseDir, `app/public/img/${stream.filename}`);//创建服务器存储路径
-                //`/home/public/dongtaiimg/${stream.filename}`
-                //`http://101.37.25.179/dongtaiimg/${stream.filename}`
+                let target = path.join(`/home/public/dongtaiimg/${stream.filename}`);//创建服务器存储路径
                 const file = fs.createWriteStream(target);//创建可写流
                 try {
                     await awaitWriteStream(stream.pipe(file));//将文件流写入file
@@ -27,7 +25,7 @@ class DongtaiController extends Controller {
                     await sendToWormhole(stream);//出错关闭管道
                     throw err
                 }
-                url = `http://127.0.0.1:8000/public/img/${stream.filename}`
+                url = `http://101.37.25.179/dongtaiimg/${stream.filename}`
             }
         }
         let data = {//需要存入数据库的数据
@@ -49,8 +47,12 @@ class DongtaiController extends Controller {
             time: new Date(),
             dongtai_id,
         }
-        let isok = await this.service.dongtai.adddongtaitext(data)
-        if (isok) {
+        let data1 = {
+        	dongtai_id
+        }
+        let isok = await this.service.dongtai.adddongtaitext(data);
+        let isok1 = await this.service.dongtai.adddongtaiimg(data1);
+        if (isok && isok1) {
             this.ctx.body = {
                 success: true,
                 msg: '添加成功'

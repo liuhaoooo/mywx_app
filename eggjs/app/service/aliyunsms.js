@@ -19,6 +19,7 @@ class AliyunsmsService extends Service {
 			let str = Math.floor(Math.random() * 8) + 1
 			code+=str
 		}//随机生成6位数
+        
         let params = {//需要传的参数
             PhoneNumbers,//手机号
             SignName: '简单小程序',
@@ -63,7 +64,11 @@ class AliyunsmsService extends Service {
 
     async checkcode(PhoneNumbers, TemplateCode, code) {//校验验证码
         const data = await this.app.redis.get(`code_${PhoneNumbers}_${TemplateCode}`);
-        return code == data
+        if (code == data) {
+            return true
+        } else {
+            return false
+        }
     }
 
 }

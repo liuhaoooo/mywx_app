@@ -6,7 +6,7 @@ class StoreService extends Service {
   async getstore(offset) {//获取所有商品
     let options = {
       // orders: [['id','desc']],
-      limit: 6,
+      limit: 8,
       offset: offset,
     };
     let data = await this.app.mysql.select('store', options);
@@ -19,14 +19,14 @@ class StoreService extends Service {
     data.isshoucang = isshoucang;
     return data;
   }
-  async getfenlei(name) {//获取商品分类
+  async getfenlei(name){//获取商品分类
     let options = {
       where: { fenlei: name }
     }
     let data = await this.app.mysql.select('store', options);
     return data;
   }
-  async getsort() {//获取类别
+  async getsort(){//获取类别
     let sql = 'select distinct fenlei from store';
     const data = await this.app.mysql.query(sql);
     return data;
@@ -60,10 +60,10 @@ class StoreService extends Service {
     });
     return result.affectedRows === 1 ? true : false
   }
-  async shoucang(data) {//收藏商品
-    const res = await this.app.mysql.get('collection', data);//判断是否已收藏
-    if (res) { return false }
-    const result = await this.app.mysql.insert('collection', data);
+  async shoucang(data){//收藏商品
+    const res = await this.app.mysql.get('collection',data);//判断是否已收藏
+    if(res){return false}
+    const result = await this.app.mysql.insert('collection',data);
     return result.affectedRows === 1 ? true : false
   }
   async cancelshoucang(data){//取消收藏
