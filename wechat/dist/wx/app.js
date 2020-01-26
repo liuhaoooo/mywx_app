@@ -61,7 +61,8 @@ var interfaces = {
     getshoucang: domain + 'api/getshoucang', //获取收藏
     addaddress: domain + 'api/addaddress', //添加地址
     getaddress: domain + 'api/getaddress', //获取地址
-    setorder: domain + 'api/setorder' //生成订房
+    setorder: domain + 'api/setorder', //生成订单
+    getorder: domain + 'api/getorder' //获取订单
 };
 module.exports = interfaces;
 

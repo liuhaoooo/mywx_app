@@ -29,4 +29,5 @@ module.exports = app => {
   router.post('/api/getaddress',controller.address.getaddress);//获取收货地址
   //-------------订单部分--------------------------------------------
   router.post('/api/setorder',controller.order.setorder);//生成订单
+  router.post('/api/getorder',controller.order.getorder);//生成订单
 };
