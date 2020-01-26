@@ -25,7 +25,7 @@ class DongtaiController extends Controller {
                     await sendToWormhole(stream);//出错关闭管道
                     throw err
                 }
-                url = `http://101.37.25.179/dongtaiimg/${stream.filename}`
+                url = `http://liuhaooo.top/dongtaiimg/${stream.filename}`
             }
         }
         let data = {//需要存入数据库的数据

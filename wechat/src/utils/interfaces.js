@@ -1,4 +1,4 @@
-// const domain = 'http://101.37.25.179:6001/'
+// const domain = 'http://liuhaooo.top:6001/'
 const domain = 'http://127.0.0.1:8000/'
 const interfaces = {
     getopenid:`${domain}api/getopenid`,//获取用户openid

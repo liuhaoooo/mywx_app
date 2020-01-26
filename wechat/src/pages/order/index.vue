@@ -141,7 +141,7 @@ export default {
       this.way = way;
     },
     //结算
-    pay() {
+    pay(){
       if(!this.address){
         wx.showToast({
               title: '请选择收货地址',
@@ -150,6 +150,24 @@ export default {
             });
         return
       }
+      let _this = this
+      wx.showModal({
+        title: "提示",
+        content: "是否要付款",
+        success(res) {
+          if (res.confirm) {
+            _this.submit(1)
+          } else if (res.cancel) {
+            _this.submit(0)
+          }
+        }
+      });
+    },
+    //提交
+    submit(isok) {
+      wx.showLoading({
+          title: "订单提交中"
+        });
       let data = {
         openid: this.openid,
         storeid: this.details.id,
@@ -157,7 +175,8 @@ export default {
         total: this.total,
         count: this.details.count,
         text: this.text,
-        address_id:this.address.id
+        address_id:this.address.id,
+        isok
       };
       this.$https
         .request({
@@ -167,8 +186,14 @@ export default {
         })
         .then(res => {
           if (res.success) {
-            
+            wx.hideLoading();
+            wx.showToast({
+              title: "成功",
+              icon: "none",
+              duration: 2000
+            });
           } else {
+            wx.hideLoading();
             wx.showToast({
               title: res.msg,
               icon: "none",

@@ -242,6 +242,25 @@ if (false) {(function () {
         });
         return;
       }
+      var _this = this;
+      wx.showModal({
+        title: "提示",
+        content: "是否要付款",
+        success: function success(res) {
+          if (res.confirm) {
+            _this.submit(1);
+          } else if (res.cancel) {
+            _this.submit(0);
+          }
+        }
+      });
+    },
+
+    //提交
+    submit: function submit(isok) {
+      wx.showLoading({
+        title: "订单提交中"
+      });
       var data = {
         openid: this.openid,
         storeid: this.details.id,
@@ -249,14 +268,23 @@ if (false) {(function () {
         total: this.total,
         count: this.details.count,
         text: this.text,
-        address_id: this.address.id
+        address_id: this.address.id,
+        isok: isok
       };
       this.$https.request({
         url: this.$interfaces.setorder,
         method: "post",
         data: data
       }).then(function (res) {
-        if (res.success) {} else {
+        if (res.success) {
+          wx.hideLoading();
+          wx.showToast({
+            title: "成功",
+            icon: "none",
+            duration: 2000
+          });
+        } else {
+          wx.hideLoading();
           wx.showToast({
             title: res.msg,
             icon: "none",

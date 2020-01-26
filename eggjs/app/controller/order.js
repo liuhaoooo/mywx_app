@@ -5,11 +5,11 @@ const Controller = require('egg').Controller;
 class OrderController extends Controller {
     async setorder() {
         const { ctx } = this;
-        const { openid, storeid, payway, total, count, text, address_id } = ctx.request.body;
-        let data = { openid, storeid, payway, total, count, text, address_id }
-        let isok = await this.service.order.setorder(data)
+        const { openid, storeid, payway, total, count, text, address_id, isok } = ctx.request.body;
+        let data = { openid, storeid, payway, total, count, text, address_id, createtime: new Date, isok }
+        let istrue = await this.service.order.setorder(data)
         ctx.status = 200;
-        ctx.body = isok ? { success: true } : { success: false, msg: '生成订单失败' }
+        ctx.body = istrue ? { success: true } : { success: false, msg: '生成订单失败' }
     }
     async getorder() {
         const { ctx } = this;

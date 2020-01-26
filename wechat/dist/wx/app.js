@@ -41,7 +41,7 @@ var state = {
 /***/ 27:
 /***/ (function(module, exports) {
 
-// const domain = 'http://101.37.25.179:6001/'
+// const domain = 'http://liuhaooo.top:6001/'
 var domain = 'http://127.0.0.1:8000/';
 var interfaces = {
     getopenid: domain + 'api/getopenid', //获取用户openid
