@@ -16,3 +16,6 @@ export const setislogin = (state, data) => {
   export const setdetails = (state, data) => {
     state.details = data;
   };
+  export const setaddress = (state, data) => {
+    state.address = data;
+  };

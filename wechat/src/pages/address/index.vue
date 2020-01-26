@@ -3,7 +3,7 @@
   <scroll-view scroll-y>
     <div v-if="data.length>0">
       <div class="address" v-for="item in data" :key="item.id">
-        <div class="content">
+        <div class="content" @click="click(item)">
           <div class="name">{{item.name}}，{{item.phone}}</div>
           <div class="details">收货地址：{{item.region}}-{{item.details}}</div>
           <i class="iconfont icon-bianji"></i>
@@ -42,12 +42,25 @@ export default {
   computed: {
     openid() {
       return this.$store.getters.openid;  
+    },
+    route(){
+      let pages = getCurrentPages();
+      console.log(pages)
+      return pages[pages.length - 2].route=="pages/order/main"
     }
   },
   methods:{
     addaddress(){
       wx.navigateTo({url:"../addaddress/main"})
+    },
+    click(data){
+      console.log(this.route)
+      if(this.route){
+        this.$store.dispatch("setaddress",data)
+        wx.navigateTo({url:'../order/main'})
+      }
     }
+    
   }
 };
 </script>

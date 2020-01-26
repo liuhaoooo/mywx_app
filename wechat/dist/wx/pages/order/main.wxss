@@ -1,5 +1,12 @@
 @import "../../common/vendor.wxss";
 
+.address_detail.data-v-698b7600 {
+  font-size: 30rpx;
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .order.data-v-698b7600 {
   width: 100%;
   height: 100vh;

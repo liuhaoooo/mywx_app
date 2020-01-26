@@ -26,7 +26,8 @@ var state = {
     productid: null, //商品id
     openid: '',
     wxuser: null, //微信用户信息
-    details: null //商品详情
+    details: null, //商品详情
+    address: null //收货地址
 };
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
     state: state,
@@ -40,8 +41,8 @@ var state = {
 /***/ 27:
 /***/ (function(module, exports) {
 
-var domain = 'http://101.37.25.179:6001/';
-// const domain = 'http://127.0.0.1:8000/'
+// const domain = 'http://101.37.25.179:6001/'
+var domain = 'http://127.0.0.1:8000/';
 var interfaces = {
     getopenid: domain + 'api/getopenid', //获取用户openid
     zhuce: domain + 'api/zhuce', //注册
@@ -59,7 +60,8 @@ var interfaces = {
     cancelshoucang: domain + 'api/cancelshoucang', //取消收藏
     getshoucang: domain + 'api/getshoucang', //获取收藏
     addaddress: domain + 'api/addaddress', //添加地址
-    getaddress: domain + 'api/getaddress' //获取地址
+    getaddress: domain + 'api/getaddress', //获取地址
+    setorder: domain + 'api/setorder' //生成订房
 };
 module.exports = interfaces;
 
@@ -254,6 +256,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "user", function() { return user; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wxuser", function() { return wxuser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "details", function() { return details; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "address", function() { return address; });
 var islogin = function islogin(state) {
   return state.islogin;
 };
@@ -272,6 +275,9 @@ var wxuser = function wxuser(state) {
 var details = function details(state) {
   return state.details;
 };
+var address = function address(state) {
+  return state.address;
+};
 
 /***/ }),
 
@@ -286,6 +292,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setuser", function() { return setuser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setwxuser", function() { return setwxuser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setdetails", function() { return setdetails; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setaddress", function() { return setaddress; });
 var setislogin = function setislogin(state, data) {
   state.islogin = data;
 };
@@ -304,6 +311,9 @@ var setwxuser = function setwxuser(state, data) {
 var setdetails = function setdetails(state, data) {
   state.details = data;
 };
+var setaddress = function setaddress(state, data) {
+  state.address = data;
+};
 
 /***/ }),
 
@@ -318,6 +328,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setuser", function() { return setuser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setwxuser", function() { return setwxuser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setdetails", function() { return setdetails; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setaddress", function() { return setaddress; });
 var setislogin = function setislogin(_ref, data) {
   var commit = _ref.commit;
 
@@ -347,6 +358,11 @@ var setdetails = function setdetails(_ref6, data) {
   var commit = _ref6.commit;
 
   commit('setdetails', data);
+};
+var setaddress = function setaddress(_ref7, data) {
+  var commit = _ref7.commit;
+
+  commit('setaddress', data);
 };
 
 /***/ }),

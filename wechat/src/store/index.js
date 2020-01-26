@@ -12,7 +12,8 @@ const state = {
     productid:null,//商品id
     openid:'',
     wxuser:null,//微信用户信息
-    details:null//商品详情
+    details:null,//商品详情
+    address:null,//收货地址
 }
 export default new Vuex.Store({
     state,

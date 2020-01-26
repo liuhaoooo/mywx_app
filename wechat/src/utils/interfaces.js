@@ -1,5 +1,5 @@
-const domain = 'http://101.37.25.179:6001/'
-// const domain = 'http://127.0.0.1:8000/'
+// const domain = 'http://101.37.25.179:6001/'
+const domain = 'http://127.0.0.1:8000/'
 const interfaces = {
     getopenid:`${domain}api/getopenid`,//获取用户openid
     zhuce:`${domain}api/zhuce`,//注册
@@ -18,5 +18,6 @@ const interfaces = {
     getshoucang:`${domain}api/getshoucang`,//获取收藏
     addaddress:`${domain}api/addaddress`,//添加地址
     getaddress:`${domain}api/getaddress`,//获取地址
+    setorder:`${domain}api/setorder`,//生成订房
 }
 module.exports = interfaces

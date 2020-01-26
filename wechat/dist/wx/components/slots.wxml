@@ -1,10 +1,10 @@
-<import src="/components/fenleidetails/index.vue.wxml" />
 <import src="/components/bottommodal/index.vue.wxml" />
-<import src="/components/dongtailist/index.vue.wxml" />
-<import src="/components/backtotop/index.vue.wxml" />
+<import src="/components/fenleidetails/index.vue.wxml" />
+<import src="/components/inputs/index.vue.wxml" />
 <import src="/components/iconliebiao1/index.vue.wxml" />
 <import src="/components/liebiao/index.vue.wxml" />
-<import src="/components/inputs/index.vue.wxml" />
+<import src="/components/dongtailist/index.vue.wxml" />
+<import src="/components/backtotop/index.vue.wxml" />
 <import src="/components/iconliebiao/index.vue.wxml" />
 <import src="/components/msg/index.vue.wxml" />
 <import src="/components/backtotop/index.vue.wxml" />

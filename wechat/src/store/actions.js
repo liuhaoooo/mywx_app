@@ -16,3 +16,6 @@ export const setwxuser = ({ commit }, data) => {
 export const setdetails = ({ commit }, data) => {
   commit('setdetails', data);
 };
+export const setaddress = ({ commit }, data) => {
+  commit('setaddress', data);
+};

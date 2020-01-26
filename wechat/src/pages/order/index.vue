@@ -15,7 +15,8 @@
           <div class="address" @click="toaddress">
             <div class="content">
               <i class="iconfont icon-dizhi4"></i>
-              <div>&emsp;点击选择收货地址</div>
+              <div v-if="address" class="address_detail">&emsp;{{address.region}}-{{address.details}}</div>
+              <div v-else class="address_detail">&emsp;点击选择收货地址</div>
               <i class="iconfont icon-arrow-right righticon"></i>
             </div>
           </div>
@@ -109,11 +110,17 @@ export default {
     };
   },
   onShow() {
+    if(this.address){
+      console.log(this.address)
+    }
     this.changedata();
   },
   computed: {
     openid() {
       return this.$store.getters.openid;
+    },
+    address(){
+      return this.$store.getters.address
     }
   },
   methods: {
@@ -135,21 +142,53 @@ export default {
     },
     //结算
     pay() {
+      if(!this.address){
+        wx.showToast({
+              title: '请选择收货地址',
+              icon: "none",
+              duration: 2000
+            });
+        return
+      }
       let data = {
         openid: this.openid,
-        id: this.details.id,
+        storeid: this.details.id,
         payway: this.way,
         total: this.total,
         count: this.details.count,
-        text: this.text
+        text: this.text,
+        address_id:this.address.id
       };
-      console.log(data);
+      this.$https
+        .request({
+          url: this.$interfaces.setorder,
+          method: "post",
+          data
+        })
+        .then(res => {
+          if (res.success) {
+            
+          } else {
+            wx.showToast({
+              title: res.msg,
+              icon: "none",
+              duration: 2000
+            });
+          }
+        });
     }
   }
 };
 </script>
 
 <style scoped>
+.address_detail{
+  font-size: 30rpx;
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis; /*文字超出显示三点*/
+  white-space: nowrap;
+}
 .order {
   width: 100%;
   height: 100vh;

@@ -3,13 +3,13 @@
     <scroll-view scroll-y class="_scroll-view data-v-083b9866">
       <view wx:if="{{data.length>0}}" class="_div data-v-083b9866">
         <view class="_div data-v-083b9866 address" wx:key="item.id" key="{{item.id}}" wx:for="{{data}}" wx:for-index="index" wx:for-item="item">
-          <view class="_div data-v-083b9866 content">
+          <view class="_div data-v-083b9866 content" bindtap="handleProxy" data-eventid="{{'0_'+index}}" data-comkey="{{$k}}">
             <view class="_div data-v-083b9866 name">{{item.name}}，{{item.phone}}</view>
             <view class="_div data-v-083b9866 details">收货地址：{{item.region}}-{{item.details}}</view>
             <view class="_i data-v-083b9866 iconfont icon-bianji"></view>
           </view>
         </view>
       </view>
-    </scroll-view> <button class="_button data-v-083b9866 button" type="primary" plain="{{false}}" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">新增收货地址</button>
+    </scroll-view> <button class="_button data-v-083b9866 button" type="primary" plain="{{false}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">新增收货地址</button>
   </view>
 </template>

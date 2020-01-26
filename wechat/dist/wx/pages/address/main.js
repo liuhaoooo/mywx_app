@@ -135,11 +135,23 @@ if (false) {(function () {
   computed: {
     openid: function openid() {
       return this.$store.getters.openid;
+    },
+    route: function route() {
+      var pages = getCurrentPages();
+      console.log(pages);
+      return pages[pages.length - 2].route == "pages/order/main";
     }
   },
   methods: {
     addaddress: function addaddress() {
       wx.navigateTo({ url: "../addaddress/main" });
+    },
+    click: function click(data) {
+      console.log(this.route);
+      if (this.route) {
+        this.$store.dispatch("setaddress", data);
+        wx.navigateTo({ url: '../order/main' });
+      }
     }
   }
 });
@@ -160,7 +172,15 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       key: item.id,
       staticClass: "address"
     }, [_c('div', {
-      staticClass: "content"
+      staticClass: "content",
+      attrs: {
+        "eventid": '0_' + index
+      },
+      on: {
+        "click": function($event) {
+          _vm.click(item)
+        }
+      }
     }, [_c('div', {
       staticClass: "name"
     }, [_vm._v(_vm._s(item.name) + "，" + _vm._s(item.phone))]), _vm._v(" "), _c('div', {
@@ -173,7 +193,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     attrs: {
       "type": "primary",
       "plain": false,
-      "eventid": '0'
+      "eventid": '1'
     },
     on: {
       "click": _vm.addaddress

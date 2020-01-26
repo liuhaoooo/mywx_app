@@ -11,7 +11,8 @@
             <view class="_div data-v-698b7600 address" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
               <view class="_div data-v-698b7600 content">
                 <view class="_i data-v-698b7600 iconfont icon-dizhi4"></view>
-                <view class="_div data-v-698b7600"> 点击选择收货地址</view>
+                <view wx:if="{{address}}" class="_div data-v-698b7600 address_detail"> {{address.region}}-{{address.details}}</view>
+                <view wx:else class="_div data-v-698b7600 address_detail"> 点击选择收货地址</view>
                 <view class="_i data-v-698b7600 iconfont icon-arrow-right righticon"></view>
               </view>
             </view>

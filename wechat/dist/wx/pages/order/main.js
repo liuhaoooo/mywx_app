@@ -182,6 +182,7 @@ if (false) {(function () {
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   data: function data() {
@@ -197,12 +198,18 @@ if (false) {(function () {
     };
   },
   onShow: function onShow() {
+    if (this.address) {
+      console.log(this.address);
+    }
     this.changedata();
   },
 
   computed: {
     openid: function openid() {
       return this.$store.getters.openid;
+    },
+    address: function address() {
+      return this.$store.getters.address;
     }
   },
   methods: {
@@ -227,15 +234,36 @@ if (false) {(function () {
 
     //结算
     pay: function pay() {
+      if (!this.address) {
+        wx.showToast({
+          title: '请选择收货地址',
+          icon: "none",
+          duration: 2000
+        });
+        return;
+      }
       var data = {
         openid: this.openid,
-        id: this.details.id,
+        storeid: this.details.id,
         payway: this.way,
         total: this.total,
         count: this.details.count,
-        text: this.text
+        text: this.text,
+        address_id: this.address.id
       };
-      console.log(data);
+      this.$https.request({
+        url: this.$interfaces.setorder,
+        method: "post",
+        data: data
+      }).then(function (res) {
+        if (res.success) {} else {
+          wx.showToast({
+            title: res.msg,
+            icon: "none",
+            duration: 2000
+          });
+        }
+      });
     }
   }
 });
@@ -277,7 +305,11 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "content"
   }, [_c('i', {
     staticClass: "iconfont icon-dizhi4"
-  }), _vm._v(" "), _c('div', [_vm._v(" 点击选择收货地址")]), _vm._v(" "), _c('i', {
+  }), _vm._v(" "), (_vm.address) ? _c('div', {
+    staticClass: "address_detail"
+  }, [_vm._v(" " + _vm._s(_vm.address.region) + "-" + _vm._s(_vm.address.details))]) : _c('div', {
+    staticClass: "address_detail"
+  }, [_vm._v(" 点击选择收货地址")]), _vm._v(" "), _c('i', {
     staticClass: "iconfont icon-arrow-right righticon"
   })], 1)]), _vm._v(" "), _c('div', {
     staticClass: "store"
