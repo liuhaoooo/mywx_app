@@ -8,86 +8,89 @@
       <div class="button" @click="pay">结算</div>
     </div>
     <div>
-    <scroll-view scroll-y>
-      <div class="order">
-        <div class="list">
-          <!-- 收货地址 -->
-          <div class="address" @click="toaddress">
-            <div class="content">
-              <i class="iconfont icon-dizhi4"></i>
-              <div v-if="address" class="address_detail">&emsp;{{address.region}}-{{address.details}}</div>
-              <div v-else class="address_detail">&emsp;点击选择收货地址</div>
-              <i class="iconfont icon-arrow-right righticon"></i>
+      <scroll-view scroll-y>
+        <div class="order">
+          <div class="list">
+            <!-- 收货地址 -->
+            <div class="address" @click="toaddress">
+              <div class="content">
+                <i class="iconfont icon-dizhi4"></i>
+                <div
+                  v-if="address"
+                  class="address_detail"
+                >&emsp;{{address.region}}-{{address.details}}</div>
+                <div v-else class="address_detail">&emsp;点击选择收货地址</div>
+                <i class="iconfont icon-arrow-right righticon"></i>
+              </div>
             </div>
-          </div>
-          <!-- 商品清单 -->
-          <div class="store">
-            <div class="content">
-              <div class="tittle">购物清单</div>
-              <div class="info">
-                <img :src="details.url" />
-                <div class="text">{{details.text}}</div>
-                <div class="price">￥{{details.price}}</div>
-                <div class="count">x{{details.count}}</div>
-                <div class="prices">
-                  合计:
-                  <span>￥{{details.prices}}</span>
+            <!-- 商品清单 -->
+            <div class="store">
+              <div class="content">
+                <div class="tittle">购物清单</div>
+                <div class="info">
+                  <img :src="details.url" />
+                  <div class="text">{{details.text}}</div>
+                  <div class="price">￥{{details.price}}</div>
+                  <div class="count">x{{details.count}}</div>
+                  <div class="prices">
+                    合计:
+                    <span>￥{{details.prices}}</span>
+                  </div>
+                </div>
+                <div class="textarea">
+                  买家留言
+                  <input
+                    v-model="text"
+                    class="weui-input"
+                    placeholder="给卖家留言:(30字以内)"
+                    placeholder-style="color:#b8b8b8;font-size: 30rpx;"
+                  />
                 </div>
               </div>
-              <div class="textarea">
-                买家留言
-                <input
-                  v-model="text"
-                  class="weui-input"
-                  placeholder="给卖家留言:(30字以内)"
-                  placeholder-style="color:#b8b8b8;font-size: 30rpx;"
-                />
+            </div>
+            <!-- 支付方式 -->
+            <div class="payway">
+              <div class="content">
+                <title>支付方式</title>
+                <div
+                  class="lists"
+                  v-for="(item,index) in payway"
+                  :key="index"
+                  @click="clickpayway(item.tittle,index)"
+                >
+                  <i :class="'iconfont '+item.icon"></i>
+                  <span>&emsp;{{item.tittle}}</span>
+                  <i
+                    :class="index==current ? 'iconfont icon-gou-blue righticon':'iconfont icon-yuanquan righticon'"
+                  ></i>
+                </div>
               </div>
             </div>
-          </div>
-          <!-- 支付方式 -->
-          <div class="payway">
-            <div class="content">
-              <title>支付方式</title>
-              <div
-                class="lists"
-                v-for="(item,index) in payway"
-                :key="index"
-                @click="clickpayway(item.tittle,index)"
-              >
-                <i :class="'iconfont '+item.icon"></i>
-                <span>&emsp;{{item.tittle}}</span>
-                <i
-                  :class="index==current ? 'iconfont icon-gou-blue righticon':'iconfont icon-yuanquan righticon'"
-                ></i>
+            <!-- 价格列表 -->
+            <div class="pricelist">
+              <div class="content">
+                <div>
+                  商品金额
+                  <span>￥{{details.prices}}</span>
+                </div>
+                <div>
+                  优惠抵扣
+                  <span>-￥{{discount}}</span>
+                </div>
+                <div>
+                  运费
+                  <span>+￥{{freight}}</span>
+                </div>
+                <div>
+                  实际支付
+                  <span>￥{{total}}</span>
+                </div>
               </div>
             </div>
+            <div></div>
           </div>
-          <!-- 价格列表 -->
-          <div class="pricelist">
-            <div class="content">
-              <div>
-                商品金额
-                <span>￥{{details.prices}}</span>
-              </div>
-              <div>
-                优惠抵扣
-                <span>-￥{{discount}}</span>
-              </div>
-              <div>
-                运费
-                <span>+￥{{freight}}</span>
-              </div>
-              <div>
-                实际支付
-                <span>￥{{total}}</span>
-              </div>
-            </div>
-          </div>
-          <div></div>
         </div>
-      </div>
-    </scroll-view>
+      </scroll-view>
     </div>
   </div>
 </template>
@@ -110,23 +113,20 @@ export default {
     };
   },
   onShow() {
-    if(this.address){
-      console.log(this.address)
-    }
     this.changedata();
   },
   computed: {
     openid() {
       return this.$store.getters.openid;
     },
-    address(){
-      return this.$store.getters.address
+    address() {
+      return this.$store.getters.address;
     }
   },
   methods: {
     //跳转地址页面
-    toaddress(){
-      wx.navigateTo({url:"../address/main"})
+    toaddress() {
+      wx.navigateTo({ url: "../address/main" });
     },
     //处理vuex拿来的数据并计算价格
     changedata() {
@@ -141,24 +141,24 @@ export default {
       this.way = way;
     },
     //结算
-    pay(){
-      if(!this.address){
+    pay() {
+      if (!this.address) {
         wx.showToast({
-              title: '请选择收货地址',
-              icon: "none",
-              duration: 2000
-            });
-        return
+          title: "请选择收货地址",
+          icon: "none",
+          duration: 2000
+        });
+        return;
       }
-      let _this = this
+      let _this = this;
       wx.showModal({
         title: "提示",
         content: "是否要付款",
         success(res) {
           if (res.confirm) {
-            _this.submit(1)
+            _this.submit(1);
           } else if (res.cancel) {
-            _this.submit(0)
+            _this.submit(0);
           }
         }
       });
@@ -166,8 +166,8 @@ export default {
     //提交
     submit(isok) {
       wx.showLoading({
-          title: "订单提交中"
-        });
+        title: "订单提交中"
+      });
       let data = {
         openid: this.openid,
         storeid: this.details.id,
@@ -175,7 +175,7 @@ export default {
         total: this.total,
         count: this.details.count,
         text: this.text,
-        address_id:this.address.id,
+        address_id: this.address.id,
         isok
       };
       this.$https
@@ -187,6 +187,9 @@ export default {
         .then(res => {
           if (res.success) {
             wx.hideLoading();
+            wx.navigateBack({
+              delta: 1
+            });
             wx.showToast({
               title: "成功",
               icon: "none",
@@ -207,7 +210,7 @@ export default {
 </script>
 
 <style scoped>
-.address_detail{
+.address_detail {
   font-size: 30rpx;
   width: 80%;
   overflow: hidden;

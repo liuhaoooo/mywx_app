@@ -138,7 +138,6 @@ if (false) {(function () {
     },
     route: function route() {
       var pages = getCurrentPages();
-      console.log(pages);
       return pages[pages.length - 2].route == "pages/order/main";
     }
   },
@@ -147,11 +146,11 @@ if (false) {(function () {
       wx.navigateTo({ url: "../addaddress/main" });
     },
     click: function click(data) {
-      console.log(this.route);
-      if (this.route) {
-        this.$store.dispatch("setaddress", data);
-        wx.navigateTo({ url: '../order/main' });
-      }
+      // console.log(this.route)
+      // if(this.route){
+      this.$store.dispatch("setaddress", data);
+      wx.redirectTo({ url: '../order/main' });
+      // }
     }
   }
 });

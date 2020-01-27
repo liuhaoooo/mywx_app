@@ -183,6 +183,9 @@ if (false) {(function () {
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   data: function data() {
@@ -198,9 +201,6 @@ if (false) {(function () {
     };
   },
   onShow: function onShow() {
-    if (this.address) {
-      console.log(this.address);
-    }
     this.changedata();
   },
 
@@ -236,7 +236,7 @@ if (false) {(function () {
     pay: function pay() {
       if (!this.address) {
         wx.showToast({
-          title: '请选择收货地址',
+          title: "请选择收货地址",
           icon: "none",
           duration: 2000
         });
@@ -278,6 +278,9 @@ if (false) {(function () {
       }).then(function (res) {
         if (res.success) {
           wx.hideLoading();
+          wx.navigateBack({
+            delta: 1
+          });
           wx.showToast({
             title: "成功",
             icon: "none",
@@ -359,9 +362,9 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "count"
   }, [_vm._v("x" + _vm._s(_vm.details.count))]), _vm._v(" "), _c('div', {
     staticClass: "prices"
-  }, [_vm._v("\n                合计:\n                "), _c('span', [_vm._v("￥" + _vm._s(_vm.details.prices))])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                  合计:\n                  "), _c('span', [_vm._v("￥" + _vm._s(_vm.details.prices))])])]), _vm._v(" "), _c('div', {
     staticClass: "textarea"
-  }, [_vm._v("\n              买家留言\n              "), _c('input', {
+  }, [_vm._v("\n                买家留言\n                "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -412,7 +415,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "pricelist"
   }, [_c('div', {
     staticClass: "content"
-  }, [_c('div', [_vm._v("\n              商品金额\n              "), _c('span', [_vm._v("￥" + _vm._s(_vm.details.prices))])]), _vm._v(" "), _c('div', [_vm._v("\n              优惠抵扣\n              "), _c('span', [_vm._v("-￥" + _vm._s(_vm.discount))])]), _vm._v(" "), _c('div', [_vm._v("\n              运费\n              "), _c('span', [_vm._v("+￥" + _vm._s(_vm.freight))])]), _vm._v(" "), _c('div', [_vm._v("\n              实际支付\n              "), _c('span', [_vm._v("￥" + _vm._s(_vm.total))])])])]), _vm._v(" "), _c('div')])])])], 1)])
+  }, [_c('div', [_vm._v("\n                商品金额\n                "), _c('span', [_vm._v("￥" + _vm._s(_vm.details.prices))])]), _vm._v(" "), _c('div', [_vm._v("\n                优惠抵扣\n                "), _c('span', [_vm._v("-￥" + _vm._s(_vm.discount))])]), _vm._v(" "), _c('div', [_vm._v("\n                运费\n                "), _c('span', [_vm._v("+￥" + _vm._s(_vm.freight))])]), _vm._v(" "), _c('div', [_vm._v("\n                实际支付\n                "), _c('span', [_vm._v("￥" + _vm._s(_vm.total))])])])]), _vm._v(" "), _c('div')])])])], 1)])
 }
 var staticRenderFns = []
 render._withStripped = true

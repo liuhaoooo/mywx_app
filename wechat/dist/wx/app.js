@@ -41,8 +41,8 @@ var state = {
 /***/ 27:
 /***/ (function(module, exports) {
 
-// const domain = 'http://liuhaooo.top:6001/'
-var domain = 'http://127.0.0.1:8000/';
+var domain = 'http://liuhaooo.top:6001/';
+// const domain = 'http://127.0.0.1:8000/'
 var interfaces = {
     getopenid: domain + 'api/getopenid', //获取用户openid
     zhuce: domain + 'api/zhuce', //注册

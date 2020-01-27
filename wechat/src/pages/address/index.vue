@@ -45,7 +45,6 @@ export default {
     },
     route(){
       let pages = getCurrentPages();
-      console.log(pages)
       return pages[pages.length - 2].route=="pages/order/main"
     }
   },
@@ -54,11 +53,11 @@ export default {
       wx.navigateTo({url:"../addaddress/main"})
     },
     click(data){
-      console.log(this.route)
-      if(this.route){
+      // console.log(this.route)
+      // if(this.route){
         this.$store.dispatch("setaddress",data)
-        wx.navigateTo({url:'../order/main'})
-      }
+        wx.redirectTo({url:'../order/main'})
+      // }
     }
     
   }
