@@ -24,7 +24,7 @@ export default {
     dongtailist,
     backtotop
   },
-  onLoad() {
+  onshow() {
     wx.showLoading({
         title: ""
       });
