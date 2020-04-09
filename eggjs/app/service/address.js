@@ -9,7 +9,7 @@ class AddressService extends Service {
         return result.affectedRows === 1 ? true : false
     }
     async getaddress(openid) {
-        let data = await this.app.mysql.select('address',openid);
+        let data = await this.app.mysql.select('address',{where:{openid}});
         return data;
     }
 }
