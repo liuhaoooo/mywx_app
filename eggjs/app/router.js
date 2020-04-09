@@ -27,6 +27,7 @@ module.exports = app => {
   //-------------收货地址部分-----------------------------------------------
   router.post('/api/addaddress',jwt,controller.address.addaddress);//添加收货地址
   router.post('/api/getaddress',jwt,controller.address.getaddress);//获取收货地址
+  router.post('/api/deleaddress',jwt,controller.address.deleaddress);//删除收货地址
   //-------------订单部分--------------------------------------------
   router.post('/api/setorder',jwt,controller.order.setorder);//生成订单
   router.post('/api/getorder',jwt,controller.order.getorder);//获取订单

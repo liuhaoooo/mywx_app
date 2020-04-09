@@ -12,6 +12,11 @@ class AddressService extends Service {
         let data = await this.app.mysql.select('address',{where:{openid}});
         return data;
     }
+    async deleaddress(openid,id) {//删除地址
+        const { app } = this;
+        const result = await app.mysql.delete('address', {openid,id});
+        return result.affectedRows === 1 ? true : false
+      }
 }
 
 module.exports = AddressService;
