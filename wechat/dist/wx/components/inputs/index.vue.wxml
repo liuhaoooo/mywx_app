@@ -1,4 +1,4 @@
-<template name="2dd8d70c">
+<template name="85cebde4">
   <view class="_div data-v-e60d9b02 inputs" style=" {{'top:' + top + ';border:' + border}}">
     <view wx:if="{{icon}}" class="_i data-v-e60d9b02 {{'iconfont ' + icon}}"></view> <input maxlength="{{maxlength}}" placeholder="{{placeholder}}" password="{{password}}" type="{{type}}" value="{{value}}" bindinput="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_input data-v-e60d9b02" />
     <icon type="{{icontype}}" size="20" class="_icon data-v-e60d9b02"></icon>

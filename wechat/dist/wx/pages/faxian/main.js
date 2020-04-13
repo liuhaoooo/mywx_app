@@ -121,7 +121,7 @@ if (false) {(function () {
     dongtailist: __WEBPACK_IMPORTED_MODULE_1__components_dongtailist_index__["a" /* default */],
     backtotop: __WEBPACK_IMPORTED_MODULE_2__components_backtotop_index__["a" /* default */]
   },
-  onLoad: function onLoad() {
+  onshow: function onshow() {
     wx.showLoading({
       title: ""
     });

@@ -1,1 +1,1 @@
-<import src="/pages/tologin/index.vue.wxml" /><template is="3fddf3da" data="{{ ...$root['0'], $root }}"/>
+<import src="/pages/tologin/index.vue.wxml" /><template is="a18bbdd6" data="{{ ...$root['0'], $root }}"/>

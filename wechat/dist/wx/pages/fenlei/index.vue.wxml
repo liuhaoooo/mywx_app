@@ -1,4 +1,4 @@
-<import src="/components/fenleidetails/index.vue.wxml" /><template name="f8ca8d50">
+<import src="/components/fenleidetails/index.vue.wxml" /><template name="69413616">
   <view class="_div data-v-4d450cc5 concent">
     <scroll-view class="_scroll-view data-v-4d450cc5 left" scroll-y="true" style="height:100vh">
       <view class="_div data-v-4d450cc5">
@@ -6,7 +6,7 @@
       </view>
     </scroll-view>
     <scroll-view class="_scroll-view data-v-4d450cc5 right" scroll-y="true" style=" {{'height:' + windowHeight + 'px'}}">
-      <view class="_div data-v-4d450cc5"><label class="_span data-v-4d450cc5 span">{{span}}</label> <template data="{{...$root[$kk+'0'], $root}}" is="a4954a4c"></template></view>
+      <view class="_div data-v-4d450cc5"><label class="_span data-v-4d450cc5 span">{{span}}</label> <template data="{{...$root[$kk+'0'], $root}}" is="727eaad0"></template></view>
     </scroll-view>
   </view>
 </template>

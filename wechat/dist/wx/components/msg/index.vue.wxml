@@ -1,4 +1,4 @@
-<template name="e2687dcc">
+<template name="b673f350">
   <view class="_div data-v-7376da81 content" wx:if="{{datas}}">
     <view class="_div data-v-7376da81 option" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'0_'+index}}" data-comkey="{{$k}}" wx:for="{{datas}}" wx:for-index="index" wx:for-item="data">
       <image src="{{data.url}}" wx:if="{{data.url}}" class="_img data-v-7376da81"></image>

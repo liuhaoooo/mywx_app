@@ -1,4 +1,4 @@
-<template name="da853ae2">
+<template name="693589cd">
   <view class="_div data-v-e0f7fc14 list">
     <view class="_div data-v-e0f7fc14 top">
       <image src="/static/images/avatar.png" alt class="_img data-v-e0f7fc14"></image> <label class="_span data-v-e0f7fc14">{{data.phone}}</label>

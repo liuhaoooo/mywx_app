@@ -1,4 +1,4 @@
-<import src="/components/bottommodal/index.vue.wxml" /><template name="570d4187">
+<import src="/components/bottommodal/index.vue.wxml" /><template name="26365c89">
   <view class="_div data-v-04103598">
     <scroll-view scroll-y enable-back-to-top="true" class="_scroll-view data-v-04103598">
       <view class="_div data-v-04103598 details">
@@ -27,6 +27,6 @@
       </view>
       <view class="_div data-v-04103598 button right" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">立即购买</view>
       <view class="_div data-v-04103598 button left" bindtap="handleProxy" data-eventid="{{'5'}}" data-comkey="{{$k}}">加入购物车</view>
-    </view> <template bindclose="handleProxy" bindadd="handleProxy" data-eventid="{{'6'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1'], $root}}" is="794bfcbb"></template> <template bindclose="handleProxy" bindadd="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'2'], $root}}" is="794bfcbb"></template>
+    </view> <template bindclose="handleProxy" bindadd="handleProxy" data-eventid="{{'6'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1'], $root}}" is="4fc423f9"></template> <template bindclose="handleProxy" bindadd="handleProxy" data-eventid="{{'7'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'2'], $root}}" is="4fc423f9"></template>
   </view>
 </template>

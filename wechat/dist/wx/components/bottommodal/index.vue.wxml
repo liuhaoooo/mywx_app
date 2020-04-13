@@ -1,4 +1,4 @@
-<template name="794bfcbb">
+<template name="4fc423f9">
   <view class="_div data-v-76129c22 modal" wx:if="{{modal}}">
     <view class="_div data-v-76129c22 close" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"></view>
     <view class="_div data-v-76129c22 content">

@@ -1,3 +1,3 @@
-<template name="cfb89190">
+<template name="7dca33f6">
   <view class="_div data-v-61ce0aa5 adddongtai">
     <scroll-view scroll-y class="_scroll-view data-v-61ce0aa5"><textarea placeholder="输入内容" auto-focus value="{{textarea}}" bindinput="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_textarea data-v-61ce0aa5" /> <view class="_div data-v-61ce0aa5 upload"><view class="_div data-v-61ce0aa5 img" wx:key="index" key="{{index}}" wx:for="{{files}}" wx:for-index="index" wx:for-item="img"><image src="{{img}}" class="_img data-v-61ce0aa5"></image></view></view> <view class="_div data-v-61ce0aa5 add" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}"><view class="_i data-v-61ce0aa5 iconfont icon-jia"></view></view></scroll-view> <button class="_button data-v-61ce0aa5 button" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">发送</button></view></template>

@@ -1,4 +1,4 @@
-<template name="6236cd5a">
+<template name="d786e656">
   <view class="_div data-v-698b7600">
     <view class="_div data-v-698b7600 pay">
       <view class="_div data-v-698b7600"> 实付： <label class="_span data-v-698b7600">￥{{total}}</label></view>

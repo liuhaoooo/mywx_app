@@ -1,3 +1,3 @@
-<template name="a8e59a5c">
+<template name="70e52654">
   <scroll-view scroll-y class="_scroll-view data-v-b03a4302"> 前端技术栈:mpvue小程序框架<view class="_br data-v-b03a4302"></view> 后端技术栈:语言:nodejs 框架:eggjs;mysql,redis </scroll-view>
 </template>

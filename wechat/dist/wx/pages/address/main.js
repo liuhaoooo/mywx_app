@@ -106,30 +106,30 @@ if (false) {(function () {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   data: function data() {
     return {
-      data: []
+      data: [],
+      slideButtons: [{
+        type: "warn",
+        text: "删除",
+        extClass: "test",
+        src: ""
+      }]
     };
   },
   onShow: function onShow() {
-    var _this = this;
-
-    wx.showLoading({
-      title: ""
-    });
-    var data = {
-      openid: this.openid
-    };
-    this.$https.request({
-      url: this.$interfaces.getaddress,
-      method: "post",
-      data: data
-    }).then(function (res) {
-      _this.data = res;
-      wx.hideLoading();
-    });
+    this.getdata();
   },
 
   computed: {
@@ -142,6 +142,24 @@ if (false) {(function () {
     }
   },
   methods: {
+    getdata: function getdata() {
+      var _this2 = this;
+
+      wx.showLoading({
+        title: ""
+      });
+      var data = {
+        openid: this.openid
+      };
+      this.$https.request({
+        url: this.$interfaces.getaddress,
+        method: "post",
+        data: data
+      }).then(function (res) {
+        _this2.data = res;
+        wx.hideLoading();
+      });
+    },
     addaddress: function addaddress() {
       wx.navigateTo({ url: "../addaddress/main" });
     },
@@ -149,8 +167,42 @@ if (false) {(function () {
       // console.log(this.route)
       // if(this.route){
       this.$store.dispatch("setaddress", data);
-      wx.redirectTo({ url: '../order/main' });
+      wx.redirectTo({ url: "../order/main" });
       // }
+    },
+
+    //左滑删除
+    slideButtonTap: function slideButtonTap(id) {
+      var _this = this;
+      wx.showModal({
+        title: "提示",
+        content: "是否删除该地址？",
+        success: function success(res) {
+          if (res.confirm) {
+            _this.deleteAddr(id);
+          }
+        }
+      });
+    },
+    deleteAddr: function deleteAddr(id) {
+      var _this3 = this;
+
+      var data = {
+        openid: this.openid,
+        id: id
+      };
+      this.$https.request({
+        url: this.$interfaces.deleaddress,
+        method: "post",
+        data: data
+      }).then(function (res) {
+        _this3.getdata();
+        wx.showToast({
+          title: res.msg,
+          icon: "none",
+          duration: 2000
+        });
+      });
     }
   }
 });
@@ -164,12 +216,26 @@ if (false) {(function () {
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('scroll-view', {
     attrs: {
-      "scroll-y": ""
+      "scroll-y": "",
+      "enable-back-to-top": "true"
     }
-  }, [(_vm.data.length > 0) ? _c('div', _vm._l((_vm.data), function(item, index) {
-    return _c('div', {
+  }, [(_vm.data.length > 0) ? _c('div', {
+    staticClass: "slideview"
+  }, _vm._l((_vm.data), function(item, index) {
+    return _c('mp-slideview', {
       key: item.id,
-      staticClass: "address"
+      staticClass: "address",
+      attrs: {
+        "buttons": _vm.slideButtons,
+        "throttle": "60",
+        "eventid": '1_' + index,
+        "mpcomid": '0_' + index
+      },
+      on: {
+        "buttontap": function($event) {
+          _vm.slideButtonTap(item.id)
+        }
+      }
     }, [_c('div', {
       staticClass: "content",
       attrs: {
@@ -192,7 +258,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     attrs: {
       "type": "primary",
       "plain": false,
-      "eventid": '1'
+      "eventid": '2'
     },
     on: {
       "click": _vm.addaddress

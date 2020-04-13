@@ -7,6 +7,7 @@
   position: fixed;
   top: 88vh;
   width: 90%;
+  background: #1296db;
 }
 .address.data-v-083b9866 {
   margin-top: 10rpx;
@@ -14,18 +15,18 @@
   height: 100rpx;
   border-bottom: #ececec 2rpx solid;
 }
-.address>.content.data-v-083b9866 {
+.address > .content.data-v-083b9866 {
   position: relative;
   width: 90%;
   height: 100%;
   margin: 0 auto;
 }
-.content>.name.data-v-083b9866 {
+.content > .name.data-v-083b9866 {
   color: #666;
   font-size: 30rpx;
   width: 90%;
 }
-.content>.details.data-v-083b9866 {
+.content > .details.data-v-083b9866 {
   width: 90%;
   color: #999;
   font-size: 24rpx;
@@ -33,7 +34,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.content>._i.data-v-083b9866 {
+.content > ._i.data-v-083b9866 {
   color: #1296db;
   position: absolute;
   right: 10rpx;

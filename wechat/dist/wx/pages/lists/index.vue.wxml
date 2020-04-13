@@ -1,4 +1,4 @@
-<template name="5afdee4c">
+<template name="d04e0748">
   <view class="_div data-v-625296f2 list">
     <view wx:if="{{!hasgouwuche}}" class="_div data-v-625296f2 content"><label class="_span data-v-625296f2">购物车竟然是空的~</label>
       <image src="/static/images/gouwuche.jpg" alt class="_img data-v-625296f2"></image>

@@ -1,4 +1,4 @@
-<template name="a60a5b2c">
+<template name="2d78c028">
   <view class="_div data-v-27519452">
     <view class="_div data-v-27519452 content">
       <view class="_div data-v-27519452 input"> 姓名 <input value="{{address.name}}" bindinput="handleProxy" class="_input data-v-27519452 weui-input" placeholder="收货人姓名" placeholder-style="color:#b8b8b8;font-size: 30rpx;" data-eventid="{{'0'}}" data-comkey="{{$k}}" /></view>
