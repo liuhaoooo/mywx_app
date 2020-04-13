@@ -6,7 +6,6 @@ const https = {
             let value = wx.getStorageSync("usertoken");
             if (value) {
                 header.Authorization = value//在请求头中携带token
-            }else{
             }
         } catch (e) {
             throw e;
