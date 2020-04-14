@@ -141,6 +141,11 @@ if (false) {(function () {
       return pages[pages.length - 2].route == "pages/order/main";
     }
   },
+  //下拉刷新
+  onPullDownRefresh: function onPullDownRefresh() {
+    this.getdata();
+  },
+
   methods: {
     getdata: function getdata() {
       var _this2 = this;
@@ -158,6 +163,7 @@ if (false) {(function () {
       }).then(function (res) {
         _this2.data = res;
         wx.hideLoading();
+        wx.stopPullDownRefresh();
       });
     },
     addaddress: function addaddress() {

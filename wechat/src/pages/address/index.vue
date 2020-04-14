@@ -51,6 +51,10 @@ export default {
       return pages[pages.length - 2].route == "pages/order/main";
     }
   },
+  //下拉刷新
+  onPullDownRefresh() {
+    this.getdata();
+  },
   methods: {
     getdata() {
       wx.showLoading({
@@ -68,6 +72,7 @@ export default {
         .then(res => {
           this.data = res;
           wx.hideLoading();
+          wx.stopPullDownRefresh();
         });
     },
     addaddress() {

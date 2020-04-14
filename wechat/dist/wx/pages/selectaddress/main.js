@@ -121,6 +121,11 @@ if (false) {(function () {
       return this.$store.getters.openid;
     }
   },
+  //下拉刷新
+  onPullDownRefresh: function onPullDownRefresh() {
+    this.getdata();
+  },
+
   methods: {
     getdata: function getdata() {
       var _this = this;
@@ -138,6 +143,7 @@ if (false) {(function () {
       }).then(function (res) {
         _this.data = res;
         wx.hideLoading();
+        wx.stopPullDownRefresh();
       });
     },
     addaddress: function addaddress() {

@@ -29,6 +29,10 @@ export default {
       return this.$store.getters.openid;
     }
   },
+  //下拉刷新
+  onPullDownRefresh() {
+    this.getdata();
+  },
   methods: {
     getdata() {
       wx.showLoading({
@@ -46,6 +50,7 @@ export default {
         .then(res => {
           this.data = res;
           wx.hideLoading();
+          wx.stopPullDownRefresh();
         });
     },
     addaddress() {
