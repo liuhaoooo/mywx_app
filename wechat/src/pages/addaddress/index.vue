@@ -44,7 +44,7 @@
         />
       </div>
     </div>
-    <button class="button" type="primary" :plain="false" :disabled="disabled" @click="add">完成</button>
+    <button class="button" type="primary" :plain="false" :disabled="disabled" @click="add" :style="disabled?'background: #80cdf7':'background: #2ba4e6'">完成</button>
   </div>
 </template>
 

@@ -319,6 +319,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }
   })])]), _vm._v(" "), _c('button', {
     staticClass: "button",
+    style: (_vm.disabled ? 'background: #80cdf7' : 'background: #2ba4e6'),
     attrs: {
       "type": "primary",
       "plain": false,

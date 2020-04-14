@@ -163,13 +163,7 @@ if (false) {(function () {
     addaddress: function addaddress() {
       wx.navigateTo({ url: "../addaddress/main" });
     },
-    click: function click(data) {
-      // console.log(this.route)
-      // if(this.route){
-      // this.$store.dispatch("setaddress", data);
-      // wx.redirectTo({ url: "../order/main" });
-      // }
-    },
+    click: function click(data) {},
 
     //左滑删除
     slideButtonTap: function slideButtonTap(id) {

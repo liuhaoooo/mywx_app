@@ -119,10 +119,6 @@ if (false) {(function () {
   computed: {
     openid: function openid() {
       return this.$store.getters.openid;
-    },
-    route: function route() {
-      var pages = getCurrentPages();
-      return pages[pages.length - 2].route == "pages/order/main";
     }
   },
   methods: {
@@ -145,16 +141,15 @@ if (false) {(function () {
       });
     },
     addaddress: function addaddress() {
-      wx.redirectTo({
-        url: "pages/order/main"
+      wx.navigateTo({
+        url: "../addaddress/main"
       });
     },
     click: function click(data) {
-      // console.log(this.route)
-      // if(this.route){
       this.$store.dispatch("setaddress", data);
-      wx.redirectTo({ url: "../order/main" });
-      // }
+      wx.navigateBack({
+        delta: 1
+      });
     }
   }
 });

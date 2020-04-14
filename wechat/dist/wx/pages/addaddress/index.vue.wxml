@@ -11,6 +11,6 @@
         </picker>
       </view>
       <view class="_div data-v-27519452 input"> 地址 <input value="{{address.details}}" bindinput="handleProxy" class="_input data-v-27519452 weui-input" placeholder="详细地址信息" placeholder-style="color:#b8b8b8;font-size: 30rpx;" data-eventid="{{'3'}}" data-comkey="{{$k}}" /></view>
-    </view> <button class="_button data-v-27519452 button" type="primary" plain="{{false}}" disabled="{{disabled}}" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">完成</button>
+    </view> <button class="_button data-v-27519452 button" type="primary" plain="{{false}}" disabled="{{disabled}}" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}" style=" {{disabled ? 'background: #80cdf7' : 'background: #2ba4e6'}}">完成</button>
   </view>
 </template>

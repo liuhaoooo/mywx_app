@@ -2,12 +2,12 @@
   <div>
     <scroll-view scroll-y enable-back-to-top="true">
       <div v-if="data.length>0">
-          <div class="address" v-for="item in data" :key="item.id">
+        <div class="address" v-for="item in data" :key="item.id">
           <div class="content" @click="click(item)">
             <div class="name">{{item.name}}，{{item.phone}}</div>
             <div class="details">收货地址：{{item.region}}-{{item.details}}</div>
           </div>
-          </div>
+        </div>
       </div>
     </scroll-view>
     <button class="button" type="primary" :plain="false" @click="addaddress">新增收货地址</button>
@@ -27,10 +27,6 @@ export default {
   computed: {
     openid() {
       return this.$store.getters.openid;
-    },
-    route() {
-      let pages = getCurrentPages();
-      return pages[pages.length - 2].route == "pages/order/main";
     }
   },
   methods: {
@@ -53,16 +49,15 @@ export default {
         });
     },
     addaddress() {
-      wx.redirectTo({
-            url:"pages/order/main"
-        });
+      wx.navigateTo({
+        url: "../addaddress/main"
+      });
     },
     click(data) {
-      // console.log(this.route)
-      // if(this.route){
       this.$store.dispatch("setaddress", data);
-      wx.redirectTo({ url: "../order/main" });
-      // }
+      wx.navigateBack({
+        delta: 1
+      });
     }
   }
 };

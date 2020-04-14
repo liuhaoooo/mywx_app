@@ -74,11 +74,7 @@ export default {
       wx.navigateTo({ url: "../addaddress/main" });
     },
     click(data) {
-      // console.log(this.route)
-      // if(this.route){
-      // this.$store.dispatch("setaddress", data);
-      // wx.redirectTo({ url: "../order/main" });
-      // }
+
     },
     //左滑删除
     slideButtonTap(id) {
