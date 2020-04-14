@@ -1,23 +1,13 @@
 <template>
   <div>
     <scroll-view scroll-y enable-back-to-top="true">
-      <div v-if="data.length>0" class="slideview">
-        <mp-slideview
-          :buttons="slideButtons"
-          @buttontap="slideButtonTap(item.id)"
-          v-for="item in data"
-          :key="item.id"
-          class="address"
-          throttle="60"
-        >
-          <!-- <div class="address" v-for="item in data" :key="item.id"> -->
+      <div v-if="data.length>0">
+          <div class="address" v-for="item in data" :key="item.id">
           <div class="content" @click="click(item)">
             <div class="name">{{item.name}}，{{item.phone}}</div>
             <div class="details">收货地址：{{item.region}}-{{item.details}}</div>
-            <i class="iconfont icon-bianji"></i>
           </div>
-          <!-- </div> -->
-        </mp-slideview>
+          </div>
       </div>
     </scroll-view>
     <button class="button" type="primary" :plain="false" @click="addaddress">新增收货地址</button>
@@ -28,15 +18,7 @@
 export default {
   data() {
     return {
-      data: [],
-      slideButtons: [
-        {
-          type: "warn",
-          text: "删除",
-          extClass: "test",
-          src: ""
-        }
-      ]
+      data: []
     };
   },
   onShow() {
@@ -71,47 +53,16 @@ export default {
         });
     },
     addaddress() {
-      wx.navigateTo({ url: "../addaddress/main" });
+      wx.redirectTo({
+            url:"pages/order/main"
+        });
     },
     click(data) {
       // console.log(this.route)
       // if(this.route){
-      // this.$store.dispatch("setaddress", data);
-      // wx.redirectTo({ url: "../order/main" });
+      this.$store.dispatch("setaddress", data);
+      wx.redirectTo({ url: "../order/main" });
       // }
-    },
-    //左滑删除
-    slideButtonTap(id) {
-      const _this = this;
-      wx.showModal({
-        title: "提示",
-        content: "是否删除该地址？",
-        success(res) {
-          if (res.confirm) {
-            _this.deleteAddr(id);
-          }
-        }
-      });
-    },
-    deleteAddr(id){
-      let data = {
-        openid: this.openid,
-        id
-      };
-      this.$https
-        .request({
-          url: this.$interfaces.deleaddress,
-          method: "post",
-          data
-        })
-        .then(res => {
-          this.getdata();
-          wx.showToast({
-            title: res.msg,
-            icon: "none",
-            duration: 2000
-          });
-        });
     }
   }
 };

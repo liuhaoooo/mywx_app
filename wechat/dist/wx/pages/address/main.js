@@ -1,6 +1,6 @@
 require("../../common/manifest.js")
 require("../../common/vendor.js")
-global.webpackJsonpMpvue([14],{
+global.webpackJsonpMpvue([15],{
 
 /***/ 100:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -166,8 +166,8 @@ if (false) {(function () {
     click: function click(data) {
       // console.log(this.route)
       // if(this.route){
-      this.$store.dispatch("setaddress", data);
-      wx.redirectTo({ url: "../order/main" });
+      // this.$store.dispatch("setaddress", data);
+      // wx.redirectTo({ url: "../order/main" });
       // }
     },
 

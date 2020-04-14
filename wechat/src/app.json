@@ -15,7 +15,8 @@
     "pages/fenleidetails/main",
     "pages/shoucanglist/main",
     "pages/order/main",
-    "pages/addaddress/main"
+    "pages/addaddress/main",
+    "pages/selectaddress/main"
   ],
   "permission": {
     "scope.userLocation": {

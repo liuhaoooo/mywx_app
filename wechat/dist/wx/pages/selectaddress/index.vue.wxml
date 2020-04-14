@@ -1,0 +1,14 @@
+<template name="969a3902">
+  <view class="_div data-v-52b31daa">
+    <scroll-view scroll-y enable-back-to-top="true" class="_scroll-view data-v-52b31daa">
+      <view wx:if="{{data.length>0}}" class="_div data-v-52b31daa">
+        <view class="_div data-v-52b31daa address" wx:key="item.id" key="{{item.id}}" wx:for="{{data}}" wx:for-index="index" wx:for-item="item">
+          <view class="_div data-v-52b31daa content" bindtap="handleProxy" data-eventid="{{'0_'+index}}" data-comkey="{{$k}}">
+            <view class="_div data-v-52b31daa name">{{item.name}}，{{item.phone}}</view>
+            <view class="_div data-v-52b31daa details">收货地址：{{item.region}}-{{item.details}}</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view> <button class="_button data-v-52b31daa button" type="primary" plain="{{false}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">新增收货地址</button>
+  </view>
+</template>

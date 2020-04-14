@@ -1,6 +1,6 @@
 require("../../common/manifest.js")
 require("../../common/vendor.js")
-global.webpackJsonpMpvue([12],{
+global.webpackJsonpMpvue([13],{
 
 /***/ 178:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -215,7 +215,7 @@ if (false) {(function () {
   methods: {
     //跳转地址页面
     toaddress: function toaddress() {
-      wx.navigateTo({ url: "../address/main" });
+      wx.navigateTo({ url: "../selectaddress/main" });
     },
 
     //处理vuex拿来的数据并计算价格
