@@ -2,14 +2,14 @@ require("../../common/manifest.js")
 require("../../common/vendor.js")
 global.webpackJsonpMpvue([13],{
 
-/***/ 183:
+/***/ 188:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index__ = __webpack_require__(184);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index__ = __webpack_require__(189);
 
 
 
@@ -24,16 +24,16 @@ app.$mount();
 
 /***/ }),
 
-/***/ 184:
+/***/ 189:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(186);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_template_compiler_index_id_data_v_75868a36_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_fileExt_template_wxml_script_js_style_wxss_platform_wx_node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_template_compiler_index_id_data_v_75868a36_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_fileExt_template_wxml_script_js_style_wxss_platform_wx_node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(192);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(185)
+  __webpack_require__(190)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -78,17 +78,20 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 185:
+/***/ 190:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 186:
+/***/ 191:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+//
+//
+//
 //
 //
 //
@@ -147,19 +150,22 @@ if (false) {(function () {
     }
   },
   onShow: function onShow() {
-    this.getstore();
+    this.getorder();
   },
 
   //下拉刷新
   onPullDownRefresh: function onPullDownRefresh() {
-    this.getstore();
+    this.getorder();
   },
 
   methods: {
     //获取用户收藏的商品
-    getstore: function getstore() {
+    getorder: function getorder() {
       var _this = this;
 
+      wx.showLoading({
+        title: ""
+      });
       var data = {
         openid: this.openid
       };
@@ -169,13 +175,13 @@ if (false) {(function () {
         data: data
       }).then(function (res) {
         _this.productInfo = res;
-        console.log(res);
+        wx.hideLoading();
         wx.stopPullDownRefresh();
       });
     },
     toDetails: function toDetails(id) {
       wx.navigateTo({ url: "../details/main" });
-      this.$store.dispatch('setproductid', id);
+      this.$store.dispatch("setproductid", id);
     },
 
     //左滑删除
@@ -191,27 +197,28 @@ if (false) {(function () {
         method: "post",
         data: data
       }).then(function (res) {
-        _this2.getstore();
+        _this2.getorder();
         wx.showToast({
           title: res.msg,
           icon: "none",
           duration: 2000
         });
       });
+    },
+    toLogistics: function toLogistics() {
+      wx.navigateTo({ url: "../logistics/main" });
     }
   }
 });
 
 /***/ }),
 
-/***/ 187:
+/***/ 192:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "list"
-  }, [(_vm.productInfo.length == '0') ? _c('div', {
+  return _c('div', [(_vm.productInfo.length == '0') ? _c('div', {
     staticClass: "content"
   }, [_c('span', [_vm._v("暂时没有订单")])]) : _c('scroll-view', {
     attrs: {
@@ -246,22 +253,14 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
         }
       }
     }), _vm._v(" "), _c('div', {
-      staticClass: "text",
-      attrs: {
-        "eventid": '1_' + index
-      },
-      on: {
-        "click": function($event) {
-          _vm.toDetails(item.storeid)
-        }
-      }
+      staticClass: "text"
     }, [_c('div', {
       staticStyle: {
         "font-size": "28rpx"
       }
     }, [_vm._v(_vm._s(item.text))]), _vm._v(" "), _c('div', {
       staticClass: "details"
-    }, [_vm._v("123124214324132432432432543543543543543")])]), _vm._v(" "), _c('div', {
+    }, [_vm._v(_vm._s(item.details))])]), _vm._v(" "), _c('div', {
       staticClass: "price"
     }, [_c('div', [_vm._v("￥" + _vm._s(item.price))]), _vm._v(" "), _c('br'), _vm._v(" "), _c('span', {
       staticStyle: {
@@ -274,7 +273,19 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       }
     }, [_vm._v("共" + _vm._s(item.count) + "件商品合计:￥" + _vm._s(item.total))]), _vm._v(" "), _c('div', {
       staticClass: "botton"
-    }, [(item.isok == '1') ? _c('button', [_vm._v("查看物流")]) : _c('button', [_vm._v("取消订单")]), _vm._v(" "), (item.isok == '1') ? _c('button', [_vm._v("确认收货")]) : _c('button', [_vm._v("去付款")])], 1)])])
+    }, [(item.isok == '1') ? _c('div', {
+      attrs: {
+        "eventid": '1_' + index
+      },
+      on: {
+        "click": _vm.toLogistics
+      }
+    }, [_vm._v("查看物流")]) : _c('div', [_vm._v("取消订单")]), _vm._v(" "), (item.isok == '1') ? _c('div', {
+      staticStyle: {
+        "border-color": "rgb(58, 176, 245)",
+        "color": "rgb(58, 176, 245)"
+      }
+    }, [_vm._v("确认收货")]) : _c('div', [_vm._v("去付款")])])])])
   }))])], 1)
 }
 var staticRenderFns = []
@@ -290,4 +301,4 @@ if (false) {
 
 /***/ })
 
-},[183]);
+},[188]);

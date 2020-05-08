@@ -1,21 +1,26 @@
 <template name="6e6981ba">
-  <view class="_div data-v-75868a36 list">
+  <view class="_div data-v-75868a36">
     <view wx:if="{{productInfo.length=='0'}}" class="_div data-v-75868a36 content"><label class="_span data-v-75868a36">暂时没有订单</label></view>
     <scroll-view wx:else scroll-y enable-back-to-top="true" class="_scroll-view data-v-75868a36">
       <view class="_div data-v-75868a36 slideview">
         <mp-slideview buttons="{{slideButtons}}" wx:key="index" key="{{index}}" bindbuttontap="handleProxy" data-eventid="{{'2_'+index}}" data-comkey="{{$k}}" wx:for="{{productInfo}}" wx:for-index="index" wx:for-item="item" class="_mp-slideview data-v-75868a36">
           <view class="_div data-v-75868a36 info">
             <image src="{{item.url}}" bindtap="handleProxy" data-eventid="{{'0_'+index}}" data-comkey="{{$k}}" class="_img data-v-75868a36"></image>
-            <view class="_div data-v-75868a36 text" bindtap="handleProxy" data-eventid="{{'1_'+index}}" data-comkey="{{$k}}">
+            <view class="_div data-v-75868a36 text">
               <view style="font-size:28rpx" class="_div data-v-75868a36">{{item.text}}</view>
-              <view class="_div data-v-75868a36 details">123124214324132432432432543543543543543</view>
+              <view class="_div data-v-75868a36 details">{{item.details}}</view>
             </view>
             <view class="_div data-v-75868a36 price">
               <view class="_div data-v-75868a36">￥{{item.price}}</view>
               <view class="_br data-v-75868a36"></view> <label style="font-size:22rpx" class="_span data-v-75868a36">x{{item.count}}</label>
             </view>
             <view class="_div data-v-75868a36 total" style="color:#666">共{{item.count}}件商品合计:￥{{item.total}}</view>
-            <view class="_div data-v-75868a36 botton"><button wx:if="{{item.isok=='1'}}" class="_button data-v-75868a36">查看物流</button><button wx:else class="_button data-v-75868a36">取消订单</button> <button wx:if="{{item.isok=='1'}}" class="_button data-v-75868a36">确认收货</button><button wx:else class="_button data-v-75868a36">去付款</button></view>
+            <view class="_div data-v-75868a36 botton">
+              <view wx:if="{{item.isok=='1'}}" bindtap="handleProxy" data-eventid="{{'1_'+index}}" data-comkey="{{$k}}" class="_div data-v-75868a36">查看物流</view>
+              <view wx:else class="_div data-v-75868a36">取消订单</view>
+              <view wx:if="{{item.isok=='1'}}" style="border-color:rgb(58, 176, 245);color:rgb(58, 176, 245);" class="_div data-v-75868a36">确认收货</view>
+              <view wx:else class="_div data-v-75868a36">去付款</view>
+            </view>
           </view>
         </mp-slideview>
       </view>

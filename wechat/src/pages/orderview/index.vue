@@ -1,5 +1,5 @@
 <template>
-  <div class="list">
+  <div>
     <div v-if="productInfo.length=='0'" class="content">
       <span>暂时没有订单</span>
     </div>
@@ -12,10 +12,10 @@
           @buttontap="slideButtonTap(item.id)"
         >
           <div class="info">
-            <img :src="item.url"  @click="toDetails(item.storeid)"/>
-            <div class="text"  @click="toDetails(item.storeid)">
+            <img :src="item.url" @click="toDetails(item.storeid)" />
+            <div class="text">
               <div style="font-size:28rpx">{{item.text}}</div>
-              <div class="details">123124214324132432432432543543543543543</div>
+              <div class="details">{{item.details}}</div>
             </div>
             <div class="price">
               <div>￥{{item.price}}</div>
@@ -24,10 +24,13 @@
             </div>
             <div class="total" style="color:#666">共{{item.count}}件商品合计:￥{{item.total}}</div>
             <div class="botton">
-              <button v-if="item.isok=='1'">查看物流</button>
-              <button v-else>取消订单</button>
-              <button v-if="item.isok=='1'">确认收货</button>
-              <button v-else>去付款</button>
+              <div v-if="item.isok=='1'" @click="toLogistics">查看物流</div>
+              <div v-else>取消订单</div>
+              <div
+                v-if="item.isok=='1'"
+                style="border-color:rgb(58, 176, 245);color:rgb(58, 176, 245);"
+              >确认收货</div>
+              <div v-else>去付款</div>
             </div>
           </div>
         </mp-slideview>
@@ -53,19 +56,22 @@ export default {
   },
   computed: {
     openid() {
-        return this.$store.getters.openid;
+      return this.$store.getters.openid;
     }
   },
   onShow() {
-    this.getstore();
+    this.getorder();
   },
   //下拉刷新
   onPullDownRefresh() {
-    this.getstore();
+    this.getorder();
   },
   methods: {
     //获取用户收藏的商品
-    getstore() {
+    getorder() {
+      wx.showLoading({
+        title: ""
+      });
       let data = {
         openid: this.openid
       };
@@ -77,13 +83,13 @@ export default {
         })
         .then(res => {
           this.productInfo = res;
-          console.log(res);
+          wx.hideLoading();
           wx.stopPullDownRefresh();
         });
     },
     toDetails(id) {
       wx.navigateTo({ url: "../details/main" });
-      this.$store.dispatch('setproductid',id)
+      this.$store.dispatch("setproductid", id);
     },
     //左滑删除
     slideButtonTap(id) {
@@ -98,13 +104,16 @@ export default {
           data
         })
         .then(res => {
-          this.getstore();
+          this.getorder();
           wx.showToast({
             title: res.msg,
             icon: "none",
             duration: 2000
           });
         });
+    },
+    toLogistics() {
+      wx.navigateTo({ url: "../logistics/main" });
     }
   }
 };
@@ -178,16 +187,18 @@ export default {
   position: absolute;
   bottom: 0rpx;
   right: 0;
-  width: 60%;
+  width: 50%;
   height: 70rpx;
 }
-.botton > button {
+.botton > div {
   width: 160rpx;
-  height: 40rpx;
+  height: 46rpx;
   border-radius: 20rpx;
   font-size: 24rpx;
-  border: rgb(212, 212, 212) solid 1rpx;
+  border: rgb(212, 212, 212) solid 2rpx;
   color: #666;
-  line-height: 40rpx;
+  line-height: 46rpx;
+  text-align: center;
+  margin-right: 30rpx;
 }
 </style>

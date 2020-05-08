@@ -67,15 +67,17 @@
   position: absolute;
   bottom: 0rpx;
   right: 0;
-  width: 60%;
+  width: 50%;
   height: 70rpx;
 }
-.botton > ._button.data-v-75868a36 {
+.botton > ._div.data-v-75868a36 {
   width: 160rpx;
-  height: 40rpx;
+  height: 46rpx;
   border-radius: 20rpx;
   font-size: 24rpx;
-  border: rgb(212, 212, 212) solid 1rpx;
+  border: rgb(212, 212, 212) solid 2rpx;
   color: #666;
-  line-height: 40rpx;
+  line-height: 46rpx;
+  text-align: center;
+  margin-right: 30rpx;
 }

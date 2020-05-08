@@ -17,7 +17,8 @@
     "pages/order/main",
     "pages/addaddress/main",
     "pages/selectaddress/main",
-    "pages/orderview/main"
+    "pages/orderview/main",
+    "pages/logistics/main"
   ],
   "permission": {
     "scope.userLocation": {
