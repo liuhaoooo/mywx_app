@@ -1,0 +1,81 @@
+@import "../../common/vendor.wxss";
+
+.content.data-v-75868a36 {
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background: #f7f7f7;
+}
+.content > ._span.data-v-75868a36 {
+  position: absolute;
+  top: 300rpx;
+  left: 35%;
+  color: #999;
+}
+.info.data-v-75868a36 {
+  position: relative;
+  width: 100%;
+  height: 280rpx;
+  background: #f7f7f7;
+  color: #999;
+  border-bottom: #e6e6e6 solid 2rpx;
+}
+.info ._img.data-v-75868a36 {
+  height: 130rpx;
+  width: 130rpx;
+  margin: 20rpx;
+  border-radius: 10rpx;
+  position: absolute;
+  left: 0;
+}
+.info > .text.data-v-75868a36 {
+  width: 50%;
+  position: absolute;
+  left: 160rpx;
+  top: 10%;
+  color: #666;
+}
+.text > .details.data-v-75868a36 {
+  font-size: 24rpx;
+  color: #999;
+  width: 100%;
+  max-height: 90rpx;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+}
+.info > .price.data-v-75868a36 {
+  position: absolute;
+  right: 20rpx;
+}
+.price > ._div.data-v-75868a36 {
+  margin-top: 20rpx;
+}
+.info > .total.data-v-75868a36 {
+  text-align: right;
+  font-size: 26rpx;
+  position: absolute;
+  top: 150rpx;
+  left: 0;
+  width: 98%;
+}
+.info > .botton.data-v-75868a36 {
+  display: flex;
+  position: absolute;
+  bottom: 0rpx;
+  right: 0;
+  width: 60%;
+  height: 70rpx;
+}
+.botton > ._button.data-v-75868a36 {
+  width: 160rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  border: rgb(212, 212, 212) solid 1rpx;
+  color: #666;
+  line-height: 40rpx;
+}

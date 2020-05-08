@@ -17,10 +17,10 @@
       </view>
       <view class="_div data-v-1e30f408 mid">
         <view class="_div data-v-1e30f408 i"><template data="{{...$root[$kk+'0'], $root}}" is="285f7ef2"></template></view>
-        <view class="_div data-v-1e30f408 liebiao"><template title="手机号" icon="icon-shouji" data="{{...$root[$kk+'1'], $root}}" is="f91d8ed8"></template> <template title="收货地址" icon="icon-dizhi" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'2'], $root}}" is="f91d8ed8"></template> <template title="修改密码" icon="icon-suo1" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'3'], $root}}" is="f91d8ed8"></template> <template title="关于我们" icon="icon-guanyuwomen" bindtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'4'], $root}}" is="f91d8ed8"></template></view>
+        <view class="_div data-v-1e30f408 liebiao"><template title="手机号" icon="icon-shouji" data="{{...$root[$kk+'1'], $root}}" is="f91d8ed8"></template> <template title="收货地址" icon="icon-dizhi" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'2'], $root}}" is="f91d8ed8"></template> <template title="关于我们" icon="icon-guanyuwomen" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'3'], $root}}" is="f91d8ed8"></template></view>
       </view>
       <view class="_div data-v-1e30f408 abc"></view>
-      <view class="_div data-v-1e30f408 unlogin" bindtap="handleProxy" data-eventid="{{'4'}}" data-comkey="{{$k}}">退出登录</view>
+      <view class="_div data-v-1e30f408 unlogin" bindtap="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}">退出登录</view>
     </view>
   </scroll-view>
 </template>

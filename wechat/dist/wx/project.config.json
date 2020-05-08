@@ -23,7 +23,7 @@
 		"enhance": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.10.4",
+	"libVersion": "2.11.0",
 	"appid": "wx555f1a207ea3e072",
 	"projectname": "mydemo",
 	"debugOptions": {

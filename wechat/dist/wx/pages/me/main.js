@@ -133,7 +133,7 @@ if (false) {(function () {
 /* harmony default export */ __webpack_exports__["a"] = ({
   data: function data() {
     return {
-      datas: [{ title: "我的订单", icon: "icon-copy", tourl: "../about/main" }, { title: "我的收藏", icon: "icon-favor", tourl: "../shoucanglist/main" }, { title: "购物车", icon: "icon-cart", tourl: "../lists/main" }, { title: "我的评价", icon: "icon-edit", tourl: "../about/main" }],
+      datas: [{ title: "我的订单", icon: "icon-copy", tourl: "../orderview/main" }, { title: "我的收藏", icon: "icon-favor", tourl: "../shoucanglist/main" }, { title: "购物车", icon: "icon-cart", tourl: "../lists/main" }, { title: "我的评价", icon: "icon-edit", tourl: "../about/main" }],
       phone: "",
       address: "",
       wxuserinfo: null
@@ -165,7 +165,6 @@ if (false) {(function () {
         var value = wx.getStorageSync("wxuserinfo");
         if (value) {
           this.wxuserinfo = value;
-          // console.log("============="+JSON.stringify(this.wxuserinfo))
         }
       } catch (e) {
         throw e;
@@ -535,22 +534,10 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }
   }), _vm._v(" "), _c('liebiao', {
     attrs: {
-      "title": "修改密码",
-      "icon": "icon-suo1",
-      "eventid": '2',
-      "mpcomid": '3'
-    },
-    on: {
-      "click": function($event) {
-        _vm.to('password')
-      }
-    }
-  }), _vm._v(" "), _c('liebiao', {
-    attrs: {
       "title": "关于我们",
       "icon": "icon-guanyuwomen",
-      "eventid": '3',
-      "mpcomid": '4'
+      "eventid": '2',
+      "mpcomid": '3'
     },
     on: {
       "click": function($event) {
@@ -562,7 +549,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   }), _vm._v(" "), _c('div', {
     staticClass: "unlogin",
     attrs: {
-      "eventid": '4'
+      "eventid": '3'
     },
     on: {
       "click": _vm.unlogin

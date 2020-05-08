@@ -16,7 +16,8 @@
     "pages/shoucanglist/main",
     "pages/order/main",
     "pages/addaddress/main",
-    "pages/selectaddress/main"
+    "pages/selectaddress/main",
+    "pages/orderview/main"
   ],
   "permission": {
     "scope.userLocation": {

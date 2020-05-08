@@ -24,7 +24,7 @@
         <div class="liebiao">
           <liebiao title="手机号" :text="phone" icon="icon-shouji"></liebiao>
           <liebiao title="收货地址" :text="address" icon="icon-dizhi" @click="to('address')"></liebiao>
-          <liebiao title="修改密码" icon="icon-suo1" @click="to('password')"></liebiao>
+          <!-- <liebiao title="修改密码" icon="icon-suo1" @click="to('password')"></liebiao> -->
           <liebiao title="关于我们" icon="icon-guanyuwomen" @click="to('about')"></liebiao>
         </div>
       </div>
@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       datas: [
-        { title: "我的订单", icon:"icon-copy", tourl: "../about/main" },
+        { title: "我的订单", icon:"icon-copy", tourl: "../orderview/main" },
         { title: "我的收藏", icon:"icon-favor", tourl: "../shoucanglist/main" },
         { title: "购物车", icon:"icon-cart", tourl: "../lists/main" },
         { title: "我的评价", icon:"icon-edit", tourl: "../about/main" }
@@ -75,7 +75,6 @@ export default {
             let value = wx.getStorageSync("wxuserinfo");
             if (value) {
                 this.wxuserinfo = value
-                // console.log("============="+JSON.stringify(this.wxuserinfo))
             }
         } catch (e) {
             throw e;
