@@ -3,7 +3,7 @@
     <view wx:if="{{productInfo.length=='0'}}" class="_div data-v-75868a36 content"><label class="_span data-v-75868a36">暂时没有订单</label></view>
     <scroll-view wx:else scroll-y enable-back-to-top="true" class="_scroll-view data-v-75868a36">
       <view class="_div data-v-75868a36 slideview">
-        <mp-slideview buttons="{{slideButtons}}" wx:key="index" key="{{index}}" bindbuttontap="handleProxy" data-eventid="{{'2_'+index}}" data-comkey="{{$k}}" wx:for="{{productInfo}}" wx:for-index="index" wx:for-item="item" class="_mp-slideview data-v-75868a36">
+        <mp-slideview buttons="{{slideButtons}}" wx:key="index" key="{{index}}" bindbuttontap="handleProxy" data-eventid="{{'4_'+index}}" data-comkey="{{$k}}" wx:for="{{productInfo}}" wx:for-index="index" wx:for-item="item" class="_mp-slideview data-v-75868a36">
           <view class="_div data-v-75868a36 info">
             <image src="{{item.url}}" bindtap="handleProxy" data-eventid="{{'0_'+index}}" data-comkey="{{$k}}" class="_img data-v-75868a36"></image>
             <view class="_div data-v-75868a36 text">
@@ -16,10 +16,10 @@
             </view>
             <view class="_div data-v-75868a36 total" style="color:#666">共{{item.count}}件商品合计:￥{{item.total}}</view>
             <view class="_div data-v-75868a36 botton">
-              <view wx:if="{{item.isok=='1'}}" bindtap="handleProxy" data-eventid="{{'1_'+index}}" data-comkey="{{$k}}" class="_div data-v-75868a36">查看物流</view>
-              <view wx:else class="_div data-v-75868a36">取消订单</view>
+              <view wx:if="{{item.isok=='1'}}" bindtap="handleProxy" data-eventid="{{'2_'+index}}" data-comkey="{{$k}}" class="_div data-v-75868a36">查看物流</view>
+              <view wx:else bindtap="handleProxy" data-eventid="{{'1_'+index}}" data-comkey="{{$k}}" class="_div data-v-75868a36">取消订单</view>
               <view wx:if="{{item.isok=='1'}}" style="border-color:rgb(58, 176, 245);color:rgb(58, 176, 245);" class="_div data-v-75868a36">确认收货</view>
-              <view wx:else class="_div data-v-75868a36">去付款</view>
+              <view wx:else bindtap="handleProxy" data-eventid="{{'3_'+index}}" data-comkey="{{$k}}" class="_div data-v-75868a36">去付款</view>
             </view>
           </view>
         </mp-slideview>

@@ -28,6 +28,21 @@ class OrderService extends Service {
         });
         return result.affectedRows === 1 ? true : false
     }
+    async pay(id, isok) {
+        const {
+            app
+        } = this;
+        const row = {
+            isok: isok
+        };
+        const options = {
+            where: {
+                id: id
+            }
+        };
+        const result = await app.mysql.update('order', row, options);
+        return result.affectedRows === 1 ? true : false
+    }
 }
 
 module.exports = OrderService;

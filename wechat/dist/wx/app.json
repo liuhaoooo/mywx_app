@@ -73,5 +73,6 @@
     "mp-uploader": "static/weui-miniprogram/uploader/uploader",
     "mp-checkbox-group": "static/weui-miniprogram/checkbox-group/checkbox-group",
     "mp-checkbox": "static/weui-miniprogram/checkbox/checkbox"
-  }
+  },
+  "sitemapLocation": "sitemap63.json"
 }

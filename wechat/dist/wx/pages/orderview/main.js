@@ -161,7 +161,7 @@ if (false) {(function () {
   methods: {
     //获取用户收藏的商品
     getorder: function getorder() {
-      var _this = this;
+      var _this2 = this;
 
       wx.showLoading({
         title: ""
@@ -174,7 +174,7 @@ if (false) {(function () {
         method: "post",
         data: data
       }).then(function (res) {
-        _this.productInfo = res;
+        _this2.productInfo = res;
         wx.hideLoading();
         wx.stopPullDownRefresh();
       });
@@ -186,27 +186,71 @@ if (false) {(function () {
 
     //左滑删除
     slideButtonTap: function slideButtonTap(id) {
-      var _this2 = this;
-
       var data = {
         openid: this.openid,
         id: id
       };
-      this.$https.request({
-        url: this.$interfaces.delorder,
-        method: "post",
-        data: data
-      }).then(function (res) {
-        _this2.getorder();
-        wx.showToast({
-          title: res.msg,
-          icon: "none",
-          duration: 2000
-        });
+      var _this = this;
+      wx.showModal({
+        title: "提示",
+        content: "是否要删除订单",
+        success: function success(res) {
+          if (res.confirm) {
+            _this.$https.request({
+              url: _this.$interfaces.delorder,
+              method: "post",
+              data: data
+            }).then(function (res) {
+              _this.getorder();
+              wx.showToast({
+                title: res.msg,
+                icon: "none",
+                duration: 2000
+              });
+            });
+          }
+        }
       });
     },
     toLogistics: function toLogistics() {
       wx.navigateTo({ url: "../logistics/main" });
+    },
+
+    //点击前往支付
+    toPay: function toPay(id) {
+      var _this = this;
+      wx.showModal({
+        title: "提示",
+        content: "是否要付款",
+        success: function success(res) {
+          if (res.confirm) {
+            _this.confirm(id);
+          }
+        }
+      });
+    },
+
+    //下单
+    confirm: function confirm(id) {
+      var _this3 = this;
+
+      var data = {
+        openid: this.openid,
+        id: id,
+        isok: "1"
+      };
+      this.$https.request({
+        url: this.$interfaces.pay,
+        method: "post",
+        data: data
+      }).then(function (res) {
+        _this3.getorder();
+        wx.showToast({
+          title: res.msg,
+          icon: "success",
+          duration: 2000
+        });
+      });
     }
   }
 });
@@ -232,7 +276,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       key: index,
       attrs: {
         "buttons": _vm.slideButtons,
-        "eventid": '2_' + index,
+        "eventid": '4_' + index,
         "mpcomid": '0_' + index
       },
       on: {
@@ -275,17 +319,35 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       staticClass: "botton"
     }, [(item.isok == '1') ? _c('div', {
       attrs: {
-        "eventid": '1_' + index
+        "eventid": '2_' + index
       },
       on: {
         "click": _vm.toLogistics
       }
-    }, [_vm._v("查看物流")]) : _c('div', [_vm._v("取消订单")]), _vm._v(" "), (item.isok == '1') ? _c('div', {
+    }, [_vm._v("查看物流")]) : _c('div', {
+      attrs: {
+        "eventid": '1_' + index
+      },
+      on: {
+        "click": function($event) {
+          _vm.slideButtonTap(item.id)
+        }
+      }
+    }, [_vm._v("取消订单")]), _vm._v(" "), (item.isok == '1') ? _c('div', {
       staticStyle: {
         "border-color": "rgb(58, 176, 245)",
         "color": "rgb(58, 176, 245)"
       }
-    }, [_vm._v("确认收货")]) : _c('div', [_vm._v("去付款")])])])])
+    }, [_vm._v("确认收货")]) : _c('div', {
+      attrs: {
+        "eventid": '3_' + index
+      },
+      on: {
+        "click": function($event) {
+          _vm.toPay(item.id)
+        }
+      }
+    }, [_vm._v("去付款")])])])])
   }))])], 1)
 }
 var staticRenderFns = []

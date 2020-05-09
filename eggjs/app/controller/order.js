@@ -67,6 +67,28 @@ class OrderController extends Controller {
             }
         }
     }
+    async pay() {
+        const {
+            ctx
+        } = this;
+        let {
+            id,
+            isok
+        } = ctx.request.body;
+        let ok = await this.service.order.pay(id, isok)
+        ctx.status = 200;
+        if (ok) {
+            this.ctx.body = {
+                success: true,
+                msg: '支付成功'
+            }
+        } else {
+            this.ctx.body = {
+                success: false,
+                msg: '支付失败'
+            }
+        }
+    }
 }
 
 module.exports = OrderController;

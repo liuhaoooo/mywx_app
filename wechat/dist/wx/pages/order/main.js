@@ -248,9 +248,9 @@ if (false) {(function () {
         content: "是否要付款",
         success: function success(res) {
           if (res.confirm) {
-            _this.submit(1);
+            _this.submit('1');
           } else if (res.cancel) {
-            _this.submit(0);
+            _this.submit('0');
           }
         }
       });

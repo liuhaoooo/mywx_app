@@ -32,4 +32,5 @@ module.exports = app => {
   router.post('/api/setorder',jwt,controller.order.setorder);//生成订单
   router.post('/api/getorder',jwt,controller.order.getorder);//获取订单
   router.post('/api/delorder',jwt,controller.order.delorder);//删除订单
+  router.post('/api/pay',jwt,controller.order.pay);//支付订单
 };

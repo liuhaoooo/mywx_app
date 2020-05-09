@@ -25,12 +25,12 @@
             <div class="total" style="color:#666">共{{item.count}}件商品合计:￥{{item.total}}</div>
             <div class="botton">
               <div v-if="item.isok=='1'" @click="toLogistics">查看物流</div>
-              <div v-else>取消订单</div>
+              <div v-else @click="slideButtonTap(item.id)">取消订单</div>
               <div
                 v-if="item.isok=='1'"
                 style="border-color:rgb(58, 176, 245);color:rgb(58, 176, 245);"
               >确认收货</div>
-              <div v-else>去付款</div>
+              <div v-else @click="toPay(item.id)">去付款</div>
             </div>
           </div>
         </mp-slideview>
@@ -97,9 +97,56 @@ export default {
         openid: this.openid,
         id: id
       };
+      let _this = this;
+      wx.showModal({
+        title: "提示",
+        content: "是否要删除订单",
+        success(res) {
+          if (res.confirm) {
+            _this.$https
+              .request({
+                url: _this.$interfaces.delorder,
+                method: "post",
+                data
+              })
+              .then(res => {
+                _this.getorder();
+                wx.showToast({
+                  title: res.msg,
+                  icon: "none",
+                  duration: 2000
+                });
+              });
+          }
+        }
+      });
+    },
+    toLogistics() {
+      wx.navigateTo({ url: "../logistics/main" });
+    },
+    //点击前往支付
+    toPay(id) {
+      let _this = this;
+      wx.showModal({
+        title: "提示",
+        content: "是否要付款",
+        success(res) {
+          if (res.confirm) {
+            _this.confirm(id);
+          }
+        }
+      });
+    },
+    //下单
+    confirm(id) {
+      let data = {
+        openid: this.openid,
+        id: id,
+        isok: "1"
+      };
       this.$https
         .request({
-          url: this.$interfaces.delorder,
+          url: this.$interfaces.pay,
           method: "post",
           data
         })
@@ -107,13 +154,10 @@ export default {
           this.getorder();
           wx.showToast({
             title: res.msg,
-            icon: "none",
+            icon: "success",
             duration: 2000
           });
         });
-    },
-    toLogistics() {
-      wx.navigateTo({ url: "../logistics/main" });
     }
   }
 };

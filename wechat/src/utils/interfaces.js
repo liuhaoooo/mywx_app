@@ -22,5 +22,6 @@ const interfaces = {
     setorder:`${domain}api/setorder`,//生成订单
     getorder:`${domain}api/getorder`,//获取订单
     delorder:`${domain}api/delorder`,//删除订单
+    pay:`${domain}api/pay`,//下单订单
 }
 module.exports = interfaces
